@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AREC — Alliance for Robotics Education and Competition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0A;
+    --paper:#FAFAF8;
+    --accent:#FF5A1F;
+    --accent-dim:#C94413;
+    --grey:#6B6B6B;
+    --line:#DEDCD4;
+    --mono: 'IBM Plex Mono', monospace;
+    --display: 'Anton', sans-serif;
+    --body: 'Work Sans', sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--body);
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none;}
+  ::selection{background:var(--accent);color:var(--paper);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  .wrap{max-width:1100px;margin:0 auto;padding:0 32px;}
+
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(250,250,248,0.9);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 32px;max-width:1100px;margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand svg{width:28px;height:28px;}
+  .brand span{font-family:var(--display);font-size:20px;letter-spacing:0.5px;}
+  .navlinks{display:flex;gap:32px;font-family:var(--mono);font-size:13px;letter-spacing:0.02em;}
+  .navlinks a{position:relative;padding-bottom:4px;}
+  .navlinks a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--accent);transition:width .25s ease;}
+  .navlinks a:hover::after{width:100%;}
+  .navlinks a:focus-visible, a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+  .navcta{
+    font-family:var(--mono);font-size:13px;
+    background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:2px;
+    transition:background .2s ease;
+  }
+  .navcta:hover{background:var(--accent);}
+  @media (max-width:820px){
+    .navlinks{display:none;}
+  }
+
+  .hero{
+    position:relative;
+    padding:110px 32px 90px;
+    display:flex;align-items:center;justify-content:space-between;gap:60px;
+    max-width:1100px;margin:0 auto;
+    overflow:hidden;
+  }
+  .hero-mark{
+    position:absolute;
+    right:-140px; top:50%; transform:translateY(-50%);
+    width:560px;height:560px;
+    opacity:0.045;
+    pointer-events:none;
+  }
+  .hero-text{max-width:600px;position:relative;z-index:2;}
+  .kicker{
+    font-family:var(--mono);font-size:13px;letter-spacing:.04em;
+    color:var(--grey);margin-bottom:20px;
+  }
+  h1{
+    font-family:var(--display);
+    font-size:clamp(38px,5.6vw,72px);
+    line-height:1.02;
+    letter-spacing:-0.01em;
+    text-transform:uppercase;
+    margin-bottom:24px;
+  }
+  h1 .hl{color:var(--accent);}
+  .hero p{font-size:18px;line-height:1.65;color:#333;max-width:500px;margin-bottom:34px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);font-size:13px;
+    padding:14px 24px;border-radius:2px;display:inline-flex;align-items:center;gap:10px;
+    transition:transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+    border:1px solid var(--ink);
+  }
+  .btn-solid{background:var(--ink);color:var(--paper);}
+  .btn-solid:hover{background:var(--accent);border-color:var(--accent);}
+  .btn-outline{background:transparent;color:var(--ink);}
+  .btn-outline:hover{border-color:var(--accent);color:var(--accent-dim);}
+
+  @media (max-width:900px){
+    .hero{flex-direction:column;align-items:flex-start;padding-top:70px;}
+    .hero-mark{width:380px;height:380px;right:-160px;}
+  }
+
+  section{padding:88px 0;border-top:1px solid var(--line);}
+  .kicker-sm{
+    font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--grey);
+    margin-bottom:28px;
+  }
+
+  .about-copy p{font-size:17px;line-height:1.75;color:#2a2a2a;margin-bottom:20px;max-width:680px;}
+  .about-copy p:first-child{font-size:19px;color:var(--ink);}
+
+  .structure{background:var(--ink);color:var(--paper);}
+  .structure .kicker-sm{color:#8a8a8a;}
+  .struct-list{display:flex;flex-direction:column;gap:0;}
+  .struct-row{
+    display:grid;grid-template-columns:220px 1fr;gap:30px;
+    padding:28px 0;border-top:1px solid #242424;
+  }
+  .struct-row:first-child{border-top:none;}
+  .struct-row h3{font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;}
+  .struct-row p{font-size:15.5px;line-height:1.7;color:#c7c7c7;}
+  @media (max-width:700px){.struct-row{grid-template-columns:1fr;gap:10px;}}
+
+  .league-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;}
+  .league-card{
+    border:1px solid var(--line);padding:30px 26px;position:relative;
+    transition:border-color .2s ease, transform .2s ease;
+  }
+  .league-card:hover{border-color:var(--accent);transform:translateY(-3px);}
+  .league-card .icon{width:34px;height:34px;margin-bottom:20px;}
+  .league-card h3{font-family:var(--body);font-weight:600;font-size:16px;margin-bottom:10px;}
+  .league-card p{font-size:14.5px;line-height:1.65;color:#444;}
+  @media (max-width:900px){.league-grid{grid-template-columns:1fr;}}
+
+  .sponsor-row{
+    display:flex;justify-content:space-between;align-items:flex-start;gap:50px;flex-wrap:wrap;
+  }
+  .sponsor-copy{max-width:460px;}
+  .sponsor-copy p{font-size:16px;line-height:1.7;color:#2a2a2a;margin-bottom:26px;}
+  .tier-list{font-family:var(--mono);font-size:13px;}
+  .tier-list li{list-style:none;padding:14px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:20px;}
+  .tier-list li:last-child{border-bottom:1px solid var(--line);}
+  .tier-list span:last-child{color:var(--grey);text-align:right;}
+
+  footer{border-top:1px solid var(--line);padding:76px 0 40px;}
+  .foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:56px;}
+  .foot-cta{max-width:520px;}
+  .foot-cta p{margin-top:16px;font-size:16px;line-height:1.7;color:#2a2a2a;max-width:460px;}
+  .foot-links{display:flex;gap:60px;flex-wrap:wrap;}
+  .foot-col span{font-family:var(--mono);font-size:12px;color:var(--grey);letter-spacing:.02em;display:block;margin-bottom:14px;}
+  .foot-col a{display:block;font-size:15px;margin-bottom:10px;}
+  .foot-col a:hover{color:var(--accent-dim);}
+  .foot-bottom{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;
+    padding-top:26px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12px;color:var(--grey);
+  }
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <g stroke="#0A0A0A" stroke-width="4" stroke-linecap="round">
+          <line x1="50" y1="10" x2="50" y2="90"/>
+          <line x1="10" y1="50" x2="90" y2="50"/>
+          <line x1="21" y1="21" x2="79" y2="79"/>
+          <line x1="79" y1="21" x2="21" y2="79"/>
+        </g>
+        <g stroke="#0A0A0A" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M42 18 L50 10 L58 18"/>
+          <path d="M42 82 L50 90 L58 82"/>
+          <path d="M82 42 L90 50 L82 58"/>
+          <path d="M18 42 L10 50 L18 58"/>
+          <path d="M14 28 L21 21 L28 14"/>
+          <path d="M72 86 L79 79 L86 72"/>
+          <path d="M86 28 L79 21 L72 14"/>
+          <path d="M28 86 L21 79 L14 72"/>
+        </g>
+      </svg>
+      <span>AREC</span>
+    </div>
+    <div class="navlinks">
+      <a href="#about">About</a>
+      <a href="#structure">How it works</a>
+      <a href="#league">League</a>
+      <a href="#sponsors">Sponsors</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="navcta" href="#contact">Start a team</a>
+  </nav>
+</header>
+
+<section class="hero" style="border-top:none;">
+  <svg class="hero-mark" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round">
+      <line x1="50" y1="10" x2="50" y2="90"/>
+      <line x1="10" y1="50" x2="90" y2="50"/>
+      <line x1="21" y1="21" x2="79" y2="79"/>
+      <line x1="79" y1="21" x2="21" y2="79"/>
+    </g>
+    <g stroke="#0A0A0A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M42 18 L50 10 L58 18"/>
+      <path d="M42 82 L50 90 L58 82"/>
+      <path d="M82 42 L90 50 L82 58"/>
+      <path d="M18 42 L10 50 L18 58"/>
+      <path d="M14 28 L21 21 L28 14"/>
+      <path d="M72 86 L79 79 L86 72"/>
+      <path d="M86 28 L79 21 L72 14"/>
+      <path d="M28 86 L21 79 L14 72"/>
+    </g>
+  </svg>
+  <div class="hero-text">
+    <div class="kicker">Student-led robotics league</div>
+    <h1>Low-cost robots.<br>Real <span class="hl">competition.</span></h1>
+    <p>AREC runs a robotics league on affordable hardware, so schools and student teams that can't cover a big budget can still build, compete, and win.</p>
+    <div class="cta-row">
+      <a href="#contact" class="btn btn-solid">Start a team</a>
+      <a href="#league" class="btn btn-outline">See how it works</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker-sm">About</div>
+    <div class="about-copy">
+      <p>AREC exists to lower the cost of entry into robotics — the financial, structural, and social barriers that keep kids out of STEM before they even get a chance to try it.</p>
+      <p>We run a competitive robotics league built around low-cost robots. Cutting hardware and registration costs means under-resourced schools, community organizations, and independent student teams can compete alongside anyone else.</p>
+      <p>Beyond the robots themselves, we offer mentorship, workshops, and a network that helps new teams get off the ground and keep running year after year.</p>
+    </div>
+  </div>
+</section>
+
+<section id="structure" class="structure">
+  <div class="wrap">
+    <div class="kicker-sm">How it works</div>
+    <div class="struct-list">
+      <div class="struct-row reveal">
+        <h3>Who runs it</h3>
+        <p>Current high school students manage day-to-day operations, tournament logistics, and peer mentorship. There's no separate adult-run organization behind the curtain — it's students, top to bottom.</p>
+      </div>
+      <div class="struct-row reveal">
+        <h3>What it teaches</h3>
+        <p>Running a league gives organizers real project management, engineering, and leadership experience — skills that carry over long after they've graduated.</p>
+      </div>
+      <div class="struct-row reveal">
+        <h3>Why it's set up this way</h3>
+        <p>A student-led structure keeps the organization close to the people it's actually for, and builds a habit of community service that outlasts any one season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="league">
+  <div class="wrap">
+    <div class="kicker-sm">The league</div>
+    <div class="league-grid">
+      <div class="league-card reveal">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" stroke="#FF5A1F" stroke-width="2.2"/><path d="M20 8V2M20 38v-6M8 20H2M38 20h-6" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>A shared, low-cost robot</h3>
+        <p>Every team builds on the same affordable hardware platform, so the contest comes down to engineering and strategy, not who spent more.</p>
+      </div>
+      <div class="league-card reveal">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="#FF5A1F" stroke-width="2.2"/><path d="M20 13v7l5 3" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/></svg>
+        <h3>Mentorship and workshops</h3>
+        <p>New teams get hands-on workshops and ongoing mentorship to help them build a robot, find funding, and show up ready to compete.</p>
+      </div>
+      <div class="league-card reveal">
+        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M8 30V16l12-10 12 10v14" stroke="#FF5A1F" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 30v-8h8v8" stroke="#0A0A0A" stroke-width="2.2" stroke-linejoin="round"/></svg>
+        <h3>Open to any team</h3>
+        <p>Under-resourced schools, community groups, and independent student teams are all eligible to register and compete.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsors">
+  <div class="wrap">
+    <div class="kicker-sm">Sponsors</div>
+    <div class="sponsor-row">
+      <div class="sponsor-copy">
+        <p>Sponsor funding goes straight toward lowering the cost of entry — subsidized robot kits, free workshops, and mentorship for teams that couldn't otherwise afford to compete.</p>
+        <a href="#contact" class="btn btn-outline">Become a sponsor</a>
+      </div>
+      <ul class="tier-list" style="flex:1;min-width:280px;">
+        <li><span>Kit sponsor</span><span>Covers hardware for one team</span></li>
+        <li><span>Workshop sponsor</span><span>Funds a hands-on training session</span></li>
+        <li><span>League sponsor</span><span>Supports operations for a full season</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-cta">
+        <div class="kicker-sm" style="margin-bottom:0;">Get in touch</div>
+        <p>Want to start a team, mentor one, or sponsor the league? Send us a note and we'll help you figure out where to start.</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a href="mailto:hello@arec.org" class="btn btn-solid">Email us</a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <span>Get started</span>
+          <a href="#about">About AREC</a>
+          <a href="#league">Join a team</a>
+          <a href="#sponsors">Sponsor us</a>
+        </div>
+        <div class="foot-col">
+          <span>Connect</span>
+          <a href="mailto:hello@arec.org">hello@arec.org</a>
+          <a href="#">Instagram</a>
+          <a href="#">YouTube</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="brand"><span style="font-family:var(--display);font-size:16px;">AREC</span></div>
+      <span>Alliance for Robotics Education and Competition</span>
+      <span>© 2026 AREC</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
