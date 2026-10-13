@@ -61,6 +61,14 @@
     transition:background .2s ease;
   }
   .navcta:hover{background:var(--accent);}
+  .navdonate{
+    font-family:var(--mono);font-size:13px;font-weight:600;
+    background:var(--accent);color:var(--paper);
+    border:1px solid var(--accent);border-radius:2px;
+    padding:8px 16px;
+    transition:background .2s ease, border-color .2s ease;
+  }
+  .navdonate:hover{background:var(--accent-dim);border-color:var(--accent-dim);}
 
   /* Volunteer dropdown */
   .dropdown{position:relative;}
@@ -214,6 +222,42 @@
   .tier-list li:last-child{border-bottom:1px solid var(--line);}
   .tier-list span:last-child{color:var(--grey);text-align:right;}
 
+  /* Big donate band */
+  .donate-band{
+    background:var(--accent);color:var(--paper);
+    border-top:none;padding:80px 0;
+  }
+  .donate-inner{
+    display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap;
+  }
+  .donate-copy{max-width:600px;}
+  .donate-copy .kicker-sm{color:rgba(250,250,248,0.85);margin-bottom:18px;}
+  .donate-copy h2{
+    font-family:var(--display);
+    font-size:clamp(36px,5vw,60px);
+    line-height:1.05;text-transform:uppercase;
+    margin-bottom:16px;
+  }
+  .donate-copy p{font-size:17px;line-height:1.65;color:rgba(250,250,248,0.95);}
+  .btn-donate{
+    font-family:var(--display);
+    font-size:clamp(24px,3vw,34px);
+    letter-spacing:0.04em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);
+    border:2px solid var(--ink);border-radius:2px;
+    padding:26px 56px;
+    display:inline-flex;align-items:center;gap:16px;
+    transition:background .2s ease, color .2s ease, transform .2s ease;
+  }
+  .btn-donate:hover{background:var(--paper);color:var(--ink);border-color:var(--paper);transform:translateY(-3px);}
+  .btn-donate:focus-visible{outline:3px solid var(--paper);outline-offset:4px;}
+  .btn-donate svg{width:26px;height:26px;transition:transform .2s ease;}
+  .btn-donate:hover svg{transform:translateX(4px);}
+  @media (max-width:700px){
+    .donate-band{padding:60px 0;}
+    .btn-donate{width:100%;justify-content:center;padding:22px 24px;}
+  }
+
   /* Contact Block Styling */
   .contact-block-section {
     background: #f4f3ef;
@@ -300,6 +344,7 @@
           </li>
         </ul>
       </div>
+      <a class="navdonate" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
       <a class="navcta" href="#contact">Start a team</a>
     </div>
   </nav>
@@ -376,6 +421,22 @@
   </div>
 </section>
 
+<section class="donate-band" id="donate">
+  <div class="wrap">
+    <div class="donate-inner">
+      <div class="donate-copy">
+        <div class="kicker-sm">Support the league</div>
+        <h2>Help a team build their first robot.</h2>
+        <p>Every donation goes toward subsidized kits, free workshops, and mentorship for teams that couldn't otherwise afford to compete.</p>
+      </div>
+      <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer" class="btn-donate">
+        Donate now
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <section id="sponsors">
   <div class="wrap">
     <div class="kicker-sm">Sponsors</div>
@@ -384,7 +445,7 @@
         <p>Sponsor funding goes straight toward lowering the cost of entry — subsidized robot kits, free workshops, and mentorship for teams that couldn't otherwise afford to compete.</p>
         <div class="cta-row">
           <a href="#contact" class="btn btn-outline">Become a sponsor</a>
-          <a href="https://hcb.hackclub.com/donation/start/arec" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Donate</a>
+          <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Donate</a>
         </div>
       </div>
       <ul class="tier-list" style="flex:1;min-width:280px;">
