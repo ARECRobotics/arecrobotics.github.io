@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2027 Season &amp; Game — AREC</title>
+<meta name="description" content="The AREC 2027 season game piece, rendered in 3D, plus the full season timeline from game release to trophies.">
+<link rel="icon" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand">
+      <img src="logo.png" alt="AREC Logo">
+      <span>AREC</span>
+    </div>
+    <div class="navlinks" id="navlinks">
+      <a href="index.html#about">About</a>
+      <a href="index.html#structure">How it works</a>
+      <a href="index.html#league">League</a>
+      <a href="game.html" aria-current="page">Season</a>
+      <a href="register.html">Pre-register</a>
+      <a href="volunteer.html">Volunteer</a>
+      <a href="index.html#sponsors">Sponsors</a>
+      <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
+    </div>
+    <div class="navright">
+      <div class="dropdown" id="toolsDropdown">
+        <button type="button" class="dropdown-toggle" id="toolsToggle" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
+          Tools
+          <svg class="chev" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <ul class="dropdown-menu" id="toolsMenu" aria-labelledby="toolsToggle">
+          <li>
+            <a href="volunteer.html">
+              Volunteer with AREC
+              <small>volunteer.html</small>
+            </a>
+          </li>
+          <li>
+            <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">
+              Auth server
+              <small>auth.albt.qzz.io</small>
+            </a>
+          </li>
+          <li>
+            <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">
+              Email
+              <small>mail.arecrobotics.com</small>
+            </a>
+          </li>
+          <li>
+            <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">
+              Finances
+              <small>HCB!!</small>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a class="navdonate" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
+      <a class="navcta" href="register.html">Pre-register</a>
+    </div>
+    <button type="button" class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="wrap">
+    <div class="kicker">2027 Season</div>
+    <h1>The game piece is out.<br>The <span class="hl">game</span> is coming.</h1>
+    <p class="lede">Only the <strong>game piece</strong> has been released so far — the full game and its mechanics land on <strong>November 1</strong>. In the meantime, here is the piece itself, rendered in 3D, and the complete season timeline.</p>
+    <div class="cta-row">
+      <a href="register.html" class="btn btn-solid">Pre-register your team</a>
+      <a href="#timeline" class="btn btn-outline">See the timeline</a>
+    </div>
+    <div class="page-meta">
+      <span>Season <b>2027</b></span>
+      <span>Game piece <b>released now</b></span>
+      <span>Full game <b>November 1, 2026</b></span>
+      <span>Team registration <b>October 26, 2026</b></span>
+    </div>
+  </div>
+</section>
+
+<section id="gamepiece">
+  <div class="wrap">
+    <div class="kicker-sm">The game element</div>
+    <h2 class="sec-title">This is the piece.</h2>
+    <p class="sec-lede">The official 2027 game piece, as an actual STL model. Drag to orbit, scroll to zoom, hover to make it react, and click it to give it a shove. If you would rather print your own, the model is downloadable below — and an official copy goes on sale November 9.</p>
+
+    <div class="viewer-shell">
+      <div class="viewer-stage" id="viewerStage">
+        <div class="viewer-status" id="viewerStatus">
+          <span class="dot"></span>
+          <span id="viewerStatusText">Loading game piece…</span>
+        </div>
+        <div class="viewer-hint">Drag to orbit · scroll to zoom · click the piece</div>
+      </div>
+      <div class="viewer-toolbar">
+        <button type="button" class="viewer-btn" id="viewerSpin" aria-pressed="true">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4a8 8 0 1 0 8 8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M16 4h4v4" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span data-label>Pause spin</span>
+        </button>
+        <button type="button" class="viewer-btn" id="viewerReset">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12a8 8 0 1 1 2.4 5.7" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/><path d="M4 18v-5h5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Reset view</span>
+        </button>
+        <span class="viewer-spacer"></span>
+        <a class="viewer-btn" href="assets/game-element.stl" download>
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 4v11M7.5 10.5 12 15l4.5-4.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 19h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+          <span>Download STL</span>
+        </a>
+      </div>
+      <p class="viewer-note">
+        Model source: <a href="assets/game-element.stl" download>assets/game-element.stl</a>. Printing your own? Use the official store when it opens on November 9.
+      </p>
+    </div>
+    <div class="viewer-fallback-note" id="viewerFallbackNote">
+      Placeholder model in use — the official STL has not been added yet. Drop it at <strong>assets/game-element.stl</strong> and it will load automatically.
+    </div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="wrap">
+    <div class="split narrow-left">
+      <div>
+        <div class="kicker-sm">Season timeline</div>
+        <h2 class="sec-title">How the season opens up.</h2>
+        <p class="sec-lede" style="margin-bottom:26px;">All of these fall in 2026, feeding straight into the 2027 competition season. Dates are fixed unless we say otherwise.</p>
+        <div class="note">
+          <strong>Season name</strong>
+          Coming soon. We are still working on the name — but the season is coming either way.
+        </div>
+      </div>
+      <div class="timeline">
+        <div class="tl-item reveal">
+          <div class="tl-date">Oct 24</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Event creation opens</h3>
+            <p>Anyone can apply to run an event — both community events and official ones. If you have a venue, a field, and the drive to run a competition, this is your entry point.</p>
+          </div>
+        </div>
+        <div class="tl-item is-key reveal">
+          <div class="tl-date">Oct 26</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Team registration opens</h3>
+            <p>Pre-registration for the 2027 season goes live. Creating your team on the TMS counts as pre-registration — any registration discount is applied automatically. Fees are still to be announced and should be confirmed within the week.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">Oct 30</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Event registration opens</h3>
+            <p>Sign up for the events you want to attend. Event applications and team sign-ups both happen inside the TMS, so everything stays in one place.</p>
+          </div>
+        </div>
+        <div class="tl-item is-key reveal">
+          <div class="tl-date">Nov 1</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Game released publicly</h3>
+            <p>After we settle the game mechanics, the game goes live on the website. Rules, field layout, and everything you need to start designing around it land on this date.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">Nov 9</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Game piece store opens</h3>
+            <p>The online store opens for game piece orders, for teams that would rather not print their own. Downloading the STL and printing it yourself is still an option.</p>
+          </div>
+        </div>
+        <div class="tl-item reveal">
+          <div class="tl-date">Nov 23</div>
+          <span class="tl-dot" aria-hidden="true"></span>
+          <div class="tl-body">
+            <span class="tl-badge">2026</span>
+            <h3>Trophies and plaques</h3>
+            <p>The online store opens for award trophies and plaques. Details are still to be announced.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="tba">
+  <div class="wrap">
+    <div class="kicker-sm">Still to be announced</div>
+    <h2 class="sec-title">What we do not know yet.</h2>
+    <p class="sec-lede">We would rather tell you nothing than tell you something wrong. Here is the short list of things we have not locked down yet.</p>
+    <div class="league-grid">
+      <div class="league-card reveal">
+        <h3>Season name</h3>
+        <p>The 2027 season needs a name. It is being worked on now — hold onto your team name puns.</p>
+      </div>
+      <div class="league-card reveal">
+        <h3>Registration fees</h3>
+        <p>Fees for the 2027 season are still to be announced, and should be confirmed within a week of team registration opening on October 26.</p>
+      </div>
+      <div class="league-card reveal">
+        <h3>Trophies and plaques</h3>
+        <p>The trophy and plaque store opens on November 23, but what is available and what it costs is still to be announced.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div class="wrap">
+    <div class="strip-inner">
+      <div class="strip-copy">
+        <h2>Registration opens October 26.</h2>
+        <p>Pre-register your team on the TMS. It takes a couple of minutes, and any discount we end up announcing is applied to your account automatically.</p>
+      </div>
+      <div class="cta-row">
+        <a href="register.html" class="btn btn-solid">Pre-register a team</a>
+        <a href="volunteer.html" class="btn btn-outline">Volunteer instead</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-cta">
+        <div class="kicker-sm" style="margin-bottom:0;">Get in touch</div>
+        <p>Want to start a team, mentor one, or sponsor the league? Send us a note and we'll help you figure out where to start.</p>
+        <div class="cta-row" style="margin-top:26px;">
+          <a href="mailto:join@arecrobotics.com" class="btn btn-solid">Email us</a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <span>Get started</span>
+          <a href="index.html#about">About AREC</a>
+          <a href="index.html#league">The league</a>
+          <a href="game.html">2027 season</a>
+          <a href="register.html">Pre-register a team</a>
+          <a href="volunteer.html">Volunteer</a>
+          <a href="index.html#sponsors">Sponsor us</a>
+        </div>
+        <div class="foot-col">
+          <span>Connect</span>
+          <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
+          <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
+          <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="brand"><img src="logo.png" alt="AREC Logo" style="width:20px;height:20px;object-fit:contain;"><span style="font-family:var(--display);font-size:16px;">AREC</span></div>
+      <span>Alliance for Robotics Education and Competition</span>
+      <span>© 2026 AREC</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Volunteer dropdown
+  (function(){
+    const dd = document.getElementById('toolsDropdown');
+    const toggle = document.getElementById('toolsToggle');
+    if(!dd || !toggle) return;
+
+    function setOpen(open){
+      dd.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+    }
+
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!dd.classList.contains('open'));
+    });
+
+    dd.addEventListener('mouseenter', function(){
+      if(window.matchMedia('(hover: hover)').matches) setOpen(true);
+    });
+    dd.addEventListener('mouseleave', function(){
+      if(window.matchMedia('(hover: hover)').matches) setOpen(false);
+    });
+
+    document.addEventListener('click', function(e){
+      if(!dd.contains(e.target)) setOpen(false);
+    });
+
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && dd.classList.contains('open')){
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    dd.addEventListener('focusout', function(e){
+      if(!dd.contains(e.relatedTarget)) setOpen(false);
+    });
+  })();
+
+  // Scroll reveal
+  const els = document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.15});
+    els.forEach(el=>io.observe(el));
+  } else {
+    els.forEach(el=>el.classList.add('in'));
+  }
+
+  // Mobile nav toggle
+  (function(){
+    const btn = document.getElementById('navToggle');
+    const links = document.getElementById('navlinks');
+    if(!btn || !links) return;
+    function setOpen(open){
+      links.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    }
+    btn.addEventListener('click', function(e){
+      e.stopPropagation();
+      setOpen(!links.classList.contains('open'));
+    });
+    document.addEventListener('click', function(e){
+      if(!links.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'Escape' && links.classList.contains('open')){
+        setOpen(false);
+        btn.focus();
+      }
+    });
+    links.addEventListener('click', function(e){
+      if(e.target.closest('a')) setOpen(false);
+    });
+  })();
+</script>
+
+<script type="module" src="assets/game.js"></script>
+
+</body>
+</html>
