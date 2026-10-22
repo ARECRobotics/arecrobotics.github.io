@@ -3,31 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Volunteer — AREC</title>
-<meta name="description" content="Volunteer with AREC: event and logistics roles, competition officials, workshop mentors, and outreach. Email us, make an account, and we'll set up a time to talk.">
+<title>Volunteer | AREC</title>
+<meta name="description" content="Volunteer with AREC. Run events, mentor a team, or teach a workshop. One email, one account, one meeting to start.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="brand">
-      <img src="logo.png" alt="AREC Logo">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="AREC logo">
       <span>AREC</span>
-    </div>
+    </a>
     <div class="navlinks" id="navlinks">
-      <a href="index.html#about">About</a>
-      <a href="index.html#structure">How it works</a>
-      <a href="index.html#league">League</a>
-      <a href="game.html">Season</a>
-      <a href="register.html">Pre-register</a>
-      <a href="volunteer.html" aria-current="page">Volunteer</a>
-      <a href="index.html#sponsors">Sponsors</a>
-      <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
+      <a href="index.html"><span class="n">01</span>Home</a>
+      <a href="league.html"><span class="n">02</span>League</a>
+      <a href="game.html"><span class="n">03</span>Season</a>
+      <a href="register.html"><span class="n">04</span>Register</a>
+      <a href="volunteer.html" aria-current="page"><span class="n">05</span>Volunteer</a>
+      <a class="nav-cta-mobile" href="register.html">Pre-register a team</a>
     </div>
     <div class="navright">
       <div class="dropdown" id="toolsDropdown">
@@ -37,334 +36,303 @@
         </button>
         <ul class="dropdown-menu" id="toolsMenu" aria-labelledby="toolsToggle">
           <li>
-            <a href="volunteer.html">
-              Volunteer with AREC
-              <small>volunteer.html</small>
-            </a>
-          </li>
-          <li>
             <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">
-              Auth server
+              <strong>Auth server</strong>
               <small>auth.albt.qzz.io</small>
             </a>
           </li>
           <li>
             <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">
-              Email
+              <strong>Email</strong>
               <small>mail.arecrobotics.com</small>
             </a>
           </li>
           <li>
             <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">
-              Finances
-              <small>HCB!!</small>
+              <strong>Finances</strong>
+              <small>hcb.hackclub.com/arec</small>
             </a>
           </li>
         </ul>
       </div>
-      <a class="navdonate" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
-      <a class="navcta" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">Volunteer</a>
+      <a class="btn btn-solid" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">Volunteer</a>
     </div>
     <button type="button" class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
   </nav>
 </header>
 
-<section class="page-hero">
+<section class="cover">
   <div class="wrap">
-    <div class="kicker">Volunteer</div>
-    <h1>Run the league with <span class="hl">us.</span></h1>
-    <p class="lede">AREC is run by students, and that only works because people like you turn up. Most volunteers start at a competition — setting up fields, running matches, keeping scores — and end up running the whole league.</p>
-    <div class="cta-row">
-      <a href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer" class="btn btn-solid">Email us</a>
-      <a href="#roles" class="btn btn-outline">See the roles</a>
-    </div>
-    <div class="page-meta">
-      <span>Start with <b>an email</b></span>
-      <span>Then <b>an account</b></span>
-      <span>Then <b>a quick meeting</b></span>
+    <div class="cover-grid">
+      <h1 class="cover-title">
+        <span>Volunteer</span>
+        <span class="indent">with AREC.</span>
+      </h1>
+      <p class="lead cover-lead">The league runs on people turning up. Most volunteers start at a competition, setting up fields and running matches. Plenty end up running the whole league.</p>
+      <div class="actions cover-actions">
+          <a class="btn btn-solid" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">Email us</a>
+          <a class="btn btn-outline" href="#roles">See the roles</a>
+        </div>
     </div>
   </div>
 </section>
 
-<section id="process">
-  <div class="wrap">
-    <div class="kicker-sm">How to get started</div>
-    <h2 class="sec-title">Three steps.</h2>
-    <p class="sec-lede">There is no application form to fill out and nothing to pay. Just say hello, make an account, and we will find a time to talk.</p>
-
-    <div class="steps">
-      <div class="step reveal">
-        <div class="step-num">01</div>
-        <div>
-          <h3>Email us</h3>
-          <p>Send a note to <code>info@arecrobotics.com</code> with the subject <strong>"I want to volunteer"</strong>. Tell us roughly what you are interested in — event and logistics is the best place to start — and where you are based.</p>
-          <div class="step-actions">
-            <a href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer" class="btn btn-solid">Email info@arecrobotics.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">02</div>
-        <div>
-          <h3>Create your account</h3>
-          <p>Make an account on our auth server at <code>auth.albt.qzz.io</code>. It is the same sign-in used across every AREC service, so one account covers the TMS, event tools, and everything else. It takes about a minute.</p>
-          <div class="step-actions">
-            <a href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Create an account</a>
-            <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Already have one? Sign in</a>
-          </div>
-        </div>
-      </div>
-      <div class="step reveal">
-        <div class="step-num">03</div>
-        <div>
-          <h3>Wait for our meeting link</h3>
-          <p>Once we have your account, we will email you a booking link to the address you used in step 1. Pick a slot that works, and that is where we work out exactly what you will be doing and when you are needed.</p>
-          <div class="step-actions">
-            <span class="btn btn-outline" style="pointer-events:none;opacity:.65;">Meeting link arrives by email</span>
-          </div>
-        </div>
-      </div>
+<section>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>How to start</h2>
+      <p>Three steps. No form, no fee.</p>
     </div>
-
-    <div class="note" style="margin-top:34px;">
-      <strong>Please use the same email</strong>
-      We send the meeting link to the address you emailed us from in step 1, so keep an eye on that inbox as well as your new account. If the email never arrives, just reply to your original note and we will send it again.
+    <div>
+      <ol class="clauses">
+        <li class="clause">
+          <span class="clause-n">01</span>
+          <div>
+            <h3>Email us</h3>
+            <p>Send a note to <a class="link" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">info@arecrobotics.com</a> with the subject "I want to volunteer". Say where you are based and what you are interested in. Event and logistics is the easiest place to start.</p>
+          </div>
+        </li>
+        <li class="clause">
+          <span class="clause-n">02</span>
+          <div>
+            <h3>Create your account</h3>
+            <p>Make an account on the auth server at <a class="link" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">auth.albt.qzz.io</a>. It is the same sign-in used across every AREC service, so one account covers the TMS and every tool we run. It takes about a minute.</p>
+            <div class="actions" style="margin-top:22px;">
+              <a class="btn btn-outline" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">Create an account</a>
+              <a class="btn btn-outline" href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Already have one</a>
+            </div>
+          </div>
+        </li>
+        <li class="clause">
+          <span class="clause-n">03</span>
+          <div>
+            <h3>Wait for the meeting link</h3>
+            <p>Once we have your account, we email a booking link to the address you used in step 1. Pick a slot that works. In that meeting we work out what you will be doing and when you are needed.</p>
+          </div>
+        </li>
+      </ol>
+      <div class="note-plain" style="margin-top:44px;">
+        <p class="small">Please use the same email address for both steps. We send the meeting link to the inbox you wrote to first. If it never arrives, reply to your original message and we will send it again.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section id="roles">
-  <div class="wrap">
-    <div class="kicker-sm">Roles</div>
-    <h2 class="sec-title">Where you can help.</h2>
-    <p class="sec-lede">Event and logistics is our biggest need and the easiest way to start — most roles are trained on the day. But there is plenty of other work if you would rather be behind a laptop, in a classroom, or on the phone.</p>
-
-    <h3 style="font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;margin:36px 0 18px;">Event &amp; logistics — the core of it</h3>
-    <div class="role-grid">
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Setup &amp; teardown crew</h4>
-        <p>Build the field, lay the tape, set the game pieces and barriers, then strike it all down at the end of the day. The unglamorous job that makes everything else possible.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Field marshal</h4>
-        <p>Own the field between matches — resetting the game, clearing debris, and keeping the pace up so the queue keeps moving.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Tech inspector</h4>
-        <p>Check every robot before it is allowed on the field: size, weight, hardware, and any build rule it needs to meet.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Safety marshal</h4>
-        <p>Keep the pit and field areas safe, run the safety briefing, and be the person anyone can flag a problem to.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Queue marshal</h4>
-        <p>Call and order the teams, run the ready queue, and make sure matches start on time.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Competition</span>
-        <h4>Check-in &amp; registration desk</h4>
-        <p>Welcome teams, hand out badges and schedules, and answer the questions people ask on arrival.</p>
-      </div>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>Roles</h2>
+      <p>Event and logistics is our biggest need and the easiest way in. Most roles are trained on the day.</p>
     </div>
+    <div>
+      <p class="group-label">event and logistics</p>
+      <ul class="index">
+        <li>
+          <span class="index-term">Setup and teardown</span>
+          <span class="index-def">Build the field, set the barriers and game pieces, then strike it all down at the end of the day.</span>
+        </li>
+        <li>
+          <span class="index-term">Field marshal</span>
+          <span class="index-def">Own the field between matches. Reset the game, clear debris, and keep the pace up.</span>
+        </li>
+        <li>
+          <span class="index-term">Tech inspector</span>
+          <span class="index-def">Check every robot before it is allowed on the field. Size, weight, hardware, build rules.</span>
+        </li>
+        <li>
+          <span class="index-term">Safety marshal</span>
+          <span class="index-def">Run the safety briefing and keep the pit and field areas safe.</span>
+        </li>
+        <li>
+          <span class="index-term">Queue marshal</span>
+          <span class="index-def">Call and order the teams, run the ready queue, and start matches on time.</span>
+        </li>
+        <li>
+          <span class="index-term">Check-in desk</span>
+          <span class="index-def">Welcome teams, hand out badges and schedules, and answer questions on arrival.</span>
+        </li>
+      </ul>
 
-    <h3 style="font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;margin:48px 0 18px;">Match day officiating</h3>
-    <div class="role-grid">
-      <div class="role-card reveal">
-        <span class="role-tag">Officiating</span>
-        <h4>Referee</h4>
-        <p>Call the match. Know the rules inside out and make the call in the moment, then explain it to the teams afterwards.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Officiating</span>
-        <h4>Scorekeeper</h4>
-        <p>Track the score and the penalties for every match, and get it entered correctly the first time.</p>
-      </div>
-    </div>
+      <p class="group-label">match day</p>
+      <ul class="index">
+        <li>
+          <span class="index-term">Referee</span>
+          <span class="index-def">Call the match. Know the rules inside out, make the call in the moment, then explain it to the teams.</span>
+        </li>
+        <li>
+          <span class="index-term">Scorekeeper</span>
+          <span class="index-def">Track the score and the penalties for every match, and get it entered correctly first time.</span>
+        </li>
+      </ul>
 
-    <h3 style="font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;margin:48px 0 18px;">Workshops &amp; mentoring</h3>
-    <div class="role-grid">
-      <div class="role-card reveal">
-        <span class="role-tag">Teaching</span>
-        <h4>Build mentor</h4>
-        <p>Work with one team through their season — helping them design, build, debug, and get to a competition day ready.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Teaching</span>
-        <h4>Workshop facilitator</h4>
-        <p>Run hands-on build sessions for new teams. You bring the expertise, we bring the parts and the room.</p>
-      </div>
-    </div>
+      <p class="group-label">workshops and mentoring</p>
+      <ul class="index">
+        <li>
+          <span class="index-term">Build mentor</span>
+          <span class="index-def">Work with one team through their season, from design to competition day.</span>
+        </li>
+        <li>
+          <span class="index-term">Workshop facilitator</span>
+          <span class="index-def">Run hands-on build sessions for new teams. You bring the expertise, we bring the parts and the room.</span>
+        </li>
+      </ul>
 
-    <h3 style="font-family:var(--mono);font-size:14px;color:var(--accent);font-weight:500;margin:48px 0 18px;">Outreach, media &amp; fundraising</h3>
-    <div class="role-grid">
-      <div class="role-card reveal">
-        <span class="role-tag">Comms</span>
-        <h4>Streamer &amp; media</h4>
-        <p>Run the event stream, announce matches, and capture the footage and photos people actually want to see.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Outreach</span>
-        <h4>School &amp; community outreach</h4>
-        <p>Talk to schools, community groups, and youth organizations about putting a team together and joining the league.</p>
-      </div>
-      <div class="role-card reveal">
-        <span class="role-tag">Fundraising</span>
-        <h4>Sponsorships &amp; fundraising</h4>
-        <p>Help us find the sponsorships and donations that subsidize kits and keep registration affordable.</p>
+      <p class="group-label">outreach and media</p>
+      <ul class="index">
+        <li>
+          <span class="index-term">Streamer and announcer</span>
+          <span class="index-def">Run the event stream and call the matches.</span>
+        </li>
+        <li>
+          <span class="index-term">Photographer</span>
+          <span class="index-def">Capture the photos and footage people actually want to see.</span>
+        </li>
+        <li>
+          <span class="index-term">School outreach</span>
+          <span class="index-def">Talk to schools, youth groups, and community organizations about putting a team together.</span>
+        </li>
+        <li>
+          <span class="index-term">Fundraising</span>
+          <span class="index-def">Find the sponsorships and donations that subsidize kits and keep registration affordable.</span>
+        </li>
+      </ul>
+
+      <div class="actions" style="margin-top:48px;">
+        <a class="btn btn-solid" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">Email us</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="expect">
-  <div class="wrap">
-    <div class="split">
-      <div>
-        <div class="kicker-sm">What to expect</div>
-        <h2 class="sec-title">No experience needed.</h2>
-        <p class="sec-lede">If you have never run a robotics competition before, that is completely fine — almost all of our event volunteers had never done it before their first one.</p>
-        <ul class="fact-list">
-          <li><span>Training</span><span>On the day, before the doors open</span></li>
-          <li><span>Minimum age</span><span>Depends on the role and the venue</span></li>
-          <li><span>Commitment</span><span>Often just one event day</span></li>
-          <li><span>Travel</span><span>Reimbursed where we can</span></li>
-          <li><span>Food</span><span>Provided on event days</span></li>
-        </ul>
-      </div>
-      <div>
-        <div class="kicker-sm">Who we are</div>
-        <h2 class="sec-title">Run by students.</h2>
-        <p class="sec-lede">There is no separate adult-run organization behind the curtain. Current high school students manage day-to-day operations, tournament logistics, and peer mentorship — so volunteering with us means working directly with the people running the league.</p>
-        <div class="note">
-          <strong>Not sure where you fit?</strong>
-          Say so in your email. We will match you to whatever is most useful at the time, and you can always change roles later.
-        </div>
-        <div class="cta-row" style="margin-top:26px;">
-          <a href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer" class="btn btn-solid">Email info@arecrobotics.com</a>
-          <a href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Create an account</a>
-        </div>
-      </div>
+<section>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>What to expect</h2>
+      <p>No experience needed. Almost every event volunteer was new on their first day.</p>
+    </div>
+    <div>
+      <table class="spec">
+        <tbody>
+          <tr>
+            <th scope="row">training</th>
+            <td>On the day, before the doors open.</td>
+          </tr>
+          <tr>
+            <th scope="row">minimum age</th>
+            <td>Depends on the role and the venue.</td>
+          </tr>
+          <tr>
+            <th scope="row">commitment</th>
+            <td>Often just one event day.</td>
+          </tr>
+          <tr>
+            <th scope="row">travel</th>
+            <td>Reimbursed where we can.</td>
+          </tr>
+          <tr>
+            <th scope="row">food</th>
+            <td>Provided on event days.</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
 
-<section class="strip">
-  <div class="wrap">
-    <div class="strip-inner">
-      <div class="strip-copy">
-        <h2>Say hello. We will take it from there.</h2>
-        <p>One email, one account, one short meeting — and then you are part of the team that runs the league.</p>
-      </div>
-      <div class="cta-row">
-        <a href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer" class="btn btn-solid">Email us</a>
-        <a href="register.html" class="btn btn-outline">Register a team instead</a>
-      </div>
+<section>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>Who you would be working with</h2>
+      <p>Students, mostly.</p>
+    </div>
+    <div>
+      <p>AREC has no separate adult organization behind it. Current high school students manage day-to-day operations, tournament logistics, and peer mentorship. Working with us means working directly with the people running the league, and saying so when something is wrong.</p>
+      <p style="margin-top:20px;">If you are not sure where you fit, say so in your email. We will match you to whatever is useful at the time, and you can change roles later.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <h2>Say hello.</h2>
+      <p>One email, one account, one short meeting. After that you are part of the team that runs the league.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-solid" href="mailto:info@arecrobotics.com?subject=I%20want%20to%20volunteer">Email us</a>
+      <a class="btn" href="register.html">Register a team</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-cta">
-        <div class="kicker-sm" style="margin-bottom:0;">Get in touch</div>
-        <p>Want to start a team, mentor one, or sponsor the league? Send us a note and we'll help you figure out where to start.</p>
-        <div class="cta-row" style="margin-top:26px;">
-          <a href="mailto:join@arecrobotics.com" class="btn btn-solid">Email us</a>
-        </div>
+    <div class="foot-grid">
+      <div>
+        <h2 style="font-size:32px;">Alliance for Robotics Education and Competition</h2>
+        <p style="margin-top:18px;">A student-led robotics league on affordable hardware.</p>
       </div>
-      <div class="foot-links">
+      <div class="foot-cols">
         <div class="foot-col">
-          <span>Get started</span>
-          <a href="index.html#about">About AREC</a>
-          <a href="index.html#league">The league</a>
-          <a href="game.html">2027 season</a>
+          <h4>League</h4>
+          <a href="index.html">Home</a>
+          <a href="league.html">How it works</a>
+          <a href="league.html#sponsors">Sponsors</a>
+          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a>
+        </div>
+        <div class="foot-col">
+          <h4>Season</h4>
+          <a href="game.html">Game piece</a>
+          <a href="game.html#timeline">Timeline</a>
           <a href="register.html">Pre-register a team</a>
           <a href="volunteer.html">Volunteer</a>
-          <a href="index.html#sponsors">Sponsor us</a>
         </div>
         <div class="foot-col">
-          <span>Connect</span>
+          <h4>Contact</h4>
           <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
           <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a>
           <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
           <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <div class="brand"><img src="logo.png" alt="AREC Logo" style="width:20px;height:20px;object-fit:contain;"><span style="font-family:var(--display);font-size:16px;">AREC</span></div>
-      <span>Alliance for Robotics Education and Competition</span>
       <span>© 2026 AREC</span>
+      <span>2027 season program</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Volunteer dropdown
   (function(){
     const dd = document.getElementById('toolsDropdown');
     const toggle = document.getElementById('toolsToggle');
     if(!dd || !toggle) return;
-
     function setOpen(open){
       dd.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
     }
-
     toggle.addEventListener('click', function(e){
       e.stopPropagation();
       setOpen(!dd.classList.contains('open'));
     });
-
-    dd.addEventListener('mouseenter', function(){
-      if(window.matchMedia('(hover: hover)').matches) setOpen(true);
-    });
-    dd.addEventListener('mouseleave', function(){
-      if(window.matchMedia('(hover: hover)').matches) setOpen(false);
-    });
-
     document.addEventListener('click', function(e){
       if(!dd.contains(e.target)) setOpen(false);
     });
-
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && dd.classList.contains('open')){
         setOpen(false);
         toggle.focus();
       }
     });
-
-    dd.addEventListener('focusout', function(e){
-      if(!dd.contains(e.relatedTarget)) setOpen(false);
-    });
   })();
 
-  // Scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window){
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:0.15});
-    els.forEach(el=>io.observe(el));
-  } else {
-    els.forEach(el=>el.classList.add('in'));
-  }
-
-  // Mobile nav toggle
   (function(){
     const btn = document.getElementById('navToggle');
     const links = document.getElementById('navlinks');
@@ -389,6 +357,15 @@
     links.addEventListener('click', function(e){
       if(e.target.closest('a')) setOpen(false);
     });
+  })();
+
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(el=>el.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12});
+    els.forEach(el=>io.observe(el));
   })();
 </script>
 

@@ -1,10 +1,10 @@
-/* AREC — 2027 season game piece viewer
+/* AREC, 2027 season game piece viewer.
  *
- * Loads assets/game-element.stl and renders it in the browser with:
- *   - orbit / zoom controls + optional auto-spin
- *   - hover tilt + accent glow
- *   - click-to-animate (spin burst, scale pulse, floor shockwave)
- *   - a grid "arena" floor with real-time shadows
+ * Loads assets/game-element.stl and renders it in the browser:
+ *   - orbit and zoom, with an auto-spin toggle
+ *   - hover tilt and accent glow
+ *   - click to spin, pulse, and send a ring across the floor
+ *   - a grid arena floor with real time shadows
  *
  * If the STL is missing it falls back to a generated placeholder block so the
  * page never renders empty.
@@ -16,7 +16,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const STL_PATH = 'assets/game-element.stl';
-const ACCENT = 0xe63946;
+const ACCENT = 0xc8372a;
 
 const stage = document.getElementById('viewerStage');
 const statusEl = document.getElementById('viewerStatus');
@@ -26,7 +26,7 @@ const spinBtn = document.getElementById('viewerSpin');
 const resetBtn = document.getElementById('viewerReset');
 
 if (!stage) {
-  console.warn('[game.js] #viewerStage not found — viewer not started.');
+  console.warn('[game.js] #viewerStage not found. Viewer not started.');
 } else {
   init();
 }
@@ -50,7 +50,7 @@ function init() {
   stage.appendChild(renderer.domElement);
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xf7f6f2, 5.5, 12);
+  scene.fog = new THREE.Fog(0xf8f6f0, 5.5, 12);
 
   // studio environment so the metal/plastic reads properly
   const pmrem = new THREE.PMREMGenerator(renderer);
@@ -111,14 +111,59 @@ function init() {
   shadowPlane.receiveShadow = true;
   scene.add(shadowPlane);
 
-  const grid = new THREE.GridHelper(4.6, 18, 0xc6c3b8, 0xe2e0d8);
-  grid.position.y = FLOOR_Y + 0.001;
-  grid.material.transparent = true;
-  grid.material.opacity = 0.85;
-  grid.material.fog = true;
+  const grid = new THREE.Mesh(
+    new THREE.PlaneGeometry(24, 24),
+    new THREE.ShaderMaterial({
+      transparent: true,
+      depthWrite: false,
+      uniforms: {
+        uFine: { value: 0.25 },
+        uMajor: { value: 1.0 },
+        uColor: { value: new THREE.Color(0x8f897a) },
+        uColorMajor: { value: new THREE.Color(0x60594a) }
+      },
+      vertexShader: `
+        varying vec3 vWorld;
+        void main(){
+          vec4 wp = modelMatrix * vec4(position, 1.0);
+          vWorld = wp.xyz;
+          gl_Position = projectionMatrix * viewMatrix * wp;
+        }
+      `,
+      fragmentShader: `
+        precision highp float;
+        varying vec3 vWorld;
+        uniform float uFine;
+        uniform float uMajor;
+        uniform vec3 uColor;
+        uniform vec3 uColorMajor;
+
+        float gridMask(vec2 p, float step){
+          vec2 c = p / step;
+          vec2 d = fwidth(c);
+          vec2 g = abs(fract(c - 0.5) - 0.5) / max(d, vec2(1e-5));
+          return 1.0 - min(min(g.x, g.y), 1.0);
+        }
+
+        void main(){
+          vec2 p = vWorld.xz;
+          float fine = gridMask(p, uFine);
+          float major = gridMask(p, uMajor);
+          float fade = 1.0 - smoothstep(2.3, 5.0, length(p));
+          float a = max(fine * 0.42, major * 0.85) * fade;
+          if(a < 0.003) discard;
+          vec3 col = mix(uColor, uColorMajor, major);
+          gl_FragColor = vec4(col, a);
+        }
+      `
+    })
+  );
+  grid.rotation.x = -Math.PI / 2;
+  grid.position.y = FLOOR_Y + 0.002;
+  grid.renderOrder = 1;
   scene.add(grid);
 
-  // accent circle marking the arena centre — sized to the piece once loaded
+  // accent circle marking the arena centre, sized to the piece once loaded
   const arenaRing = new THREE.Mesh(
     new THREE.RingGeometry(1.05, 1.11, 96),
     new THREE.MeshBasicMaterial({
@@ -175,7 +220,7 @@ function init() {
       fallbackNote.classList.add('show');
       statusEl.classList.remove('ready');
       statusEl.classList.add('error');
-      statusText.textContent = 'Placeholder model — add assets/game-element.stl';
+      statusText.textContent = 'Placeholder model. Add assets/game-element.stl';
     });
 
   function addPiece(geometry) {
@@ -292,7 +337,7 @@ function init() {
 
   function triggerAction() {
     if (reduceMotion) {
-      // no spinning or shockwave — just a short glow pulse
+      // no spinning or shockwave, just a short glow pulse
       action = { start: performance.now(), dur: 420, dir: 0 };
       return;
     }
@@ -396,7 +441,7 @@ function init() {
   function ready() {
     statusEl.classList.add('ready');
     statusEl.classList.remove('error');
-    statusText.textContent = 'Game piece loaded — drag to orbit';
+    statusText.textContent = 'Game piece loaded. Drag to orbit';
   }
   function fail(msg) {
     statusEl.classList.remove('ready');

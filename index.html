@@ -3,30 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AREC — Alliance for Robotics Education and Competition</title>
+<title>AREC | Alliance for Robotics Education and Competition</title>
+<meta name="description" content="AREC runs a robotics league on affordable hardware, so schools and student teams that cannot cover a big budget can still build, compete, and win.">
 <link rel="icon" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/site.css">
+<script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
 
 <header>
   <nav>
-    <div class="brand">
-      <img src="logo.png" alt="AREC Logo">
+    <a class="brand" href="index.html">
+      <img src="logo.png" alt="AREC logo">
       <span>AREC</span>
-    </div>
+    </a>
     <div class="navlinks" id="navlinks">
-      <a href="#about">About</a>
-      <a href="#structure">How it works</a>
-      <a href="#league">League</a>
-      <a href="game.html">Season</a>
-      <a href="register.html">Pre-register</a>
-      <a href="volunteer.html">Volunteer</a>
-      <a href="#sponsors">Sponsors</a>
-      <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
+      <a href="index.html" aria-current="page"><span class="n">01</span>Home</a>
+      <a href="league.html"><span class="n">02</span>League</a>
+      <a href="game.html"><span class="n">03</span>Season</a>
+      <a href="register.html"><span class="n">04</span>Register</a>
+      <a href="volunteer.html"><span class="n">05</span>Volunteer</a>
+      <a class="nav-cta-mobile" href="index.html">Pre-register a team</a>
     </div>
     <div class="navright">
       <div class="dropdown" id="toolsDropdown">
@@ -36,257 +36,205 @@
         </button>
         <ul class="dropdown-menu" id="toolsMenu" aria-labelledby="toolsToggle">
           <li>
-            <a href="volunteer.html">
-              Volunteer with AREC
-              <small>volunteer.html</small>
-            </a>
-          </li>
-          <li>
             <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">
-              Auth server
+              <strong>Auth server</strong>
               <small>auth.albt.qzz.io</small>
             </a>
           </li>
           <li>
             <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">
-              Email
+              <strong>Email</strong>
               <small>mail.arecrobotics.com</small>
             </a>
           </li>
           <li>
             <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">
-              Finances
-              <small>HCB!!</small>
+              <strong>Finances</strong>
+              <small>hcb.hackclub.com/arec</small>
             </a>
           </li>
         </ul>
       </div>
-      <a class="navdonate" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
-      <a class="navcta" href="register.html">Pre-register</a>
+      <a class="btn btn-solid" href="register.html">Pre-register a team</a>
     </div>
     <button type="button" class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
-        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
       </svg>
     </button>
   </nav>
 </header>
 
-<section class="hero" style="border-top:none;">
-  <div class="hero-content-wrapper">
-    <div class="hero-text">
-      <div class="kicker">Student-led robotics league</div>
-      <h1>Low-cost robots.<br>Real <span class="hl">competition.</span></h1>
-      <p>AREC runs a robotics league on affordable hardware, so schools and student teams that can't cover a big budget can still build, compete, and win.</p>
-      <div class="cta-row">
-        <a href="register.html" class="btn btn-solid">Pre-register a team</a>
-        <a href="#league" class="btn btn-outline">See how it works</a>
-      </div>
-    </div>
-    <div class="hero-logo-container">
-      <img src="logo.png" alt="AREC Hero Logo">
-    </div>
-  </div>
-</section>
-
-<section id="about">
+<section class="cover">
   <div class="wrap">
-    <div class="kicker-sm">About</div>
-    <div class="about-copy">
-      <p>AREC exists to lower the cost of entry into robotics — the financial, structural, and social barriers that keep kids out of STEM before they even get a chance to try it.</p>
-      <p>We run a competitive robotics league built around low-cost robots. Cutting hardware and registration costs means under-resourced schools, community organizations, and independent student teams can compete alongside anyone else.</p>
-      <p>Beyond the robots themselves, we offer mentorship, workshops, and a network that helps new teams get off the ground and keep running year after year.</p>
-    </div>
-  </div>
-</section>
-
-<section id="structure" class="structure">
-  <div class="wrap">
-    <div class="kicker-sm">How it works</div>
-    <div class="struct-list">
-      <div class="struct-row reveal">
-        <h3>Who runs it</h3>
-        <p>Current high school students manage day-to-day operations, tournament logistics, and peer mentorship. There's no separate adult-run organization behind the curtain — it's students, top to bottom.</p>
-      </div>
-      <div class="struct-row reveal">
-        <h3>What it teaches</h3>
-        <p>Running a league gives organizers real project management, engineering, and leadership experience — skills that carry over long after they've graduated.</p>
-      </div>
-      <div class="struct-row reveal">
-        <h3>Why it's set up this way</h3>
-        <p>A student-led structure keeps the organization close to the people it's actually for, and builds a habit of community service that outlasts any one season.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="league">
-  <div class="wrap">
-    <div class="kicker-sm">The league</div>
-    <div class="league-grid">
-      <div class="league-card reveal">
-        <svg class="icon" viewBox="0 0 40 40" fill="none"><rect x="8" y="8" width="24" height="24" stroke="#E63946" stroke-width="2.2"/><path d="M20 8V2M20 38v-6M8 20H2M38 20h-6" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/></svg>
-        <h3>A shared, low-cost robot</h3>
-        <p>Every team builds on the same affordable hardware platform, so the contest comes down to engineering and strategy, not who spent more.</p>
-      </div>
-      <div class="league-card reveal">
-        <svg class="icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="12" stroke="#E63946" stroke-width="2.2"/><path d="M20 13v7l5 3" stroke="#0A0A0A" stroke-width="2.2" stroke-linecap="round"/></svg>
-        <h3>Mentorship and workshops</h3>
-        <p>New teams get hands-on workshops and ongoing mentorship to help them build a robot, find funding, and show up ready to compete.</p>
-      </div>
-      <div class="league-card reveal">
-        <svg class="icon" viewBox="0 0 40 40" fill="none"><path d="M8 30V16l12-10 12 10v14" stroke="#E63946" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 30v-8h8v8" stroke="#0A0A0A" stroke-width="2.2" stroke-linejoin="round"/></svg>
-        <h3>Open to any team</h3>
-        <p>Under-resourced schools, community groups, and independent student teams are all eligible to register and compete.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="donate-band" id="donate">
-  <div class="wrap">
-    <div class="donate-inner">
-      <div class="donate-copy">
-        <div class="kicker-sm">Support the league</div>
-        <h2>Help a team build their first robot.</h2>
-        <p>Every donation goes toward subsidized kits, free workshops, and mentorship for teams that couldn't otherwise afford to compete.</p>
-      </div>
-      <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer" class="btn-donate">
-        Donate now
-        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<section id="sponsors">
-  <div class="wrap">
-    <div class="kicker-sm">Sponsors</div>
-    <div class="sponsor-row">
-      <div class="sponsor-copy">
-        <p>Sponsor funding goes straight toward lowering the cost of entry — subsidized robot kits, free workshops, and mentorship for teams that couldn't otherwise afford to compete.</p>
-        <div class="cta-row">
-          <a href="#contact" class="btn btn-outline">Become a sponsor</a>
-          <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer" class="btn btn-solid">Donate</a>
+    <div class="cover-grid">
+      <h1 class="cover-title">
+        <span>Low-cost robots.</span>
+        <span class="indent">Real competition.</span>
+      </h1>
+      <p class="lead cover-lead">AREC runs a robotics league on affordable hardware. Schools and student teams that cannot cover a big budget can still build, compete, and win.</p>
+      <div class="actions cover-actions">
+          <a class="btn btn-solid" href="register.html">Pre-register a team</a>
+          <a class="btn btn-outline" href="volunteer.html">Volunteer</a>
         </div>
-      </div>
-      <ul class="tier-list" style="flex:1;min-width:280px;">
-        <li><span>Kit sponsor</span><span>Covers hardware for one team</span></li>
-        <li><span>Workshop sponsor</span><span>Funds a hands-on training session</span></li>
-        <li><span>League sponsor</span><span>Supports operations for a full season</span></li>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>The 2027 season</h2>
+      <p>Dates we have locked in. Everything else lands as we announce it.</p>
+    </div>
+    <div>
+      <ol class="rail">
+        <li>
+          <span class="rail-date">Oct 24</span>
+          <span class="rail-note">Event creation opens</span>
+        </li>
+        <li>
+          <span class="rail-date">Oct 26</span>
+          <span class="rail-note">Team registration opens</span>
+        </li>
+        <li>
+          <span class="rail-date">Nov 1</span>
+          <span class="rail-note">Game released publicly</span>
+        </li>
+        <li>
+          <span class="rail-date">Nov 9</span>
+          <span class="rail-note">Game piece store opens</span>
+        </li>
+      </ol>
+      <p style="margin-top:34px;"><a class="link" href="game.html">Full season timeline</a></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap split">
+    <div class="section-head">
+      <h2>Three ways in</h2>
+      <p>Pick the one that fits you. The rest is details.</p>
+    </div>
+    <div>
+      <ul class="index">
+        <li>
+          <span class="index-term">Start a team</span>
+          <span class="index-def">Register on the TMS, then get a mentor, a build workshop, and a robot you can afford.</span>
+        </li>
+        <li>
+          <span class="index-term">Volunteer</span>
+          <span class="index-def">Run events, mentor a team, or teach a workshop. One email and one meeting to start.</span>
+        </li>
+        <li>
+          <span class="index-term">Sponsor</span>
+          <span class="index-def">Fund kits, workshops, and league operations so no team is priced out.</span>
+        </li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<section class="contact-block-section">
-  <div class="wrap">
-    <div class="kicker-sm">Direct Contact</div>
-    <div class="contact-card reveal">
-      <div class="contact-card-info">
-        <h2>Get in Touch with Us</h2>
-        <p>Have questions about joining, mentoring, or sponsoring? Reach out to our team directly via email:</p>
-        <div class="contact-email-display">join@arecrobotics.com</div>
-      </div>
-      <div class="cta-row">
-        <a href="mailto:join@arecrobotics.com" class="btn btn-solid">Send an Email</a>
-        <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Instagram (@join.arec)</a>
+      <div class="actions" style="margin-top:40px;">
+        <a class="btn btn-solid" href="register.html">Pre-register a team</a>
+        <a class="btn btn-outline" href="league.html#sponsors">Sponsor the league</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer id="contact">
-  <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-cta">
-        <div class="kicker-sm" style="margin-bottom:0;">Get in touch</div>
-        <p>Want to start a team, mentor one, or sponsor the league? Send us a note and we'll help you figure out where to start.</p>
-        <div class="cta-row" style="margin-top:26px;">
-          <a href="mailto:join@arecrobotics.com" class="btn btn-solid">Email us</a>
-        </div>
+<section class="band">
+  <div class="wrap band-grid">
+    <div>
+      <h2>Fund a robot.</h2>
+      <p>Every donation pays for subsidized kits, free workshops, and mentorship for teams that cannot otherwise afford to compete.</p>
+    </div>
+    <div class="actions">
+      <a class="btn btn-solid" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate now</a>
+      <a class="btn" href="league.html#sponsors">Sponsor the league</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap contact-grid">
+    <div>
+      <h2>Talk to us</h2>
+      <p class="small" style="margin-top:16px;">Questions about joining, mentoring, or sponsoring. A person reads every message.</p>
+    </div>
+    <div>
+      <a class="contact-email" href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
+      <div class="actions">
+        <a class="btn btn-outline" href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="btn btn-outline" href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a>
       </div>
-      <div class="foot-links">
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h2 style="font-size:32px;">Alliance for Robotics Education and Competition</h2>
+        <p style="margin-top:18px;">A student-led robotics league on affordable hardware.</p>
+      </div>
+      <div class="foot-cols">
         <div class="foot-col">
-          <span>Get started</span>
-          <a href="#about">About AREC</a>
-          <a href="#league">The league</a>
-          <a href="game.html">2027 season</a>
+          <h4>League</h4>
+          <a href="index.html">Home</a>
+          <a href="league.html">How it works</a>
+          <a href="league.html#sponsors">Sponsors</a>
+          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a>
+        </div>
+        <div class="foot-col">
+          <h4>Season</h4>
+          <a href="game.html">Game piece</a>
+          <a href="game.html#timeline">Timeline</a>
           <a href="register.html">Pre-register a team</a>
           <a href="volunteer.html">Volunteer</a>
-          <a href="#sponsors">Sponsor us</a>
         </div>
         <div class="foot-col">
-          <span>Connect</span>
+          <h4>Contact</h4>
           <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
           <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a>
           <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">TMS</a>
+          <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <div class="brand"><img src="logo.png" alt="AREC Logo" style="width:20px;height:20px;object-fit:contain;"><span style="font-family:var(--display);font-size:16px;">AREC</span></div>
-      <span>Alliance for Robotics Education and Competition</span>
       <span>© 2026 AREC</span>
+      <span>2027 season program</span>
     </div>
   </div>
 </footer>
 
 <script>
-  // Scroll reveal
-  const els = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  }, {threshold:0.15});
-  els.forEach(el=>io.observe(el));
-
-  // Volunteer dropdown
+  // Tools dropdown, click only
   (function(){
     const dd = document.getElementById('toolsDropdown');
     const toggle = document.getElementById('toolsToggle');
     if(!dd || !toggle) return;
-
     function setOpen(open){
       dd.classList.toggle('open', open);
       toggle.setAttribute('aria-expanded', String(open));
     }
-
     toggle.addEventListener('click', function(e){
       e.stopPropagation();
       setOpen(!dd.classList.contains('open'));
     });
-
-    // Open on hover for mouse users
-    dd.addEventListener('mouseenter', function(){
-      if(window.matchMedia('(hover: hover)').matches) setOpen(true);
-    });
-    dd.addEventListener('mouseleave', function(){
-      if(window.matchMedia('(hover: hover)').matches) setOpen(false);
-    });
-
-    // Close on outside click
     document.addEventListener('click', function(e){
       if(!dd.contains(e.target)) setOpen(false);
     });
-
-    // Close on Escape, return focus to the button
     document.addEventListener('keydown', function(e){
       if(e.key === 'Escape' && dd.classList.contains('open')){
         setOpen(false);
         toggle.focus();
       }
     });
-
-    // Close when focus leaves the dropdown (keyboard tabbing)
-    dd.addEventListener('focusout', function(e){
-      if(!dd.contains(e.relatedTarget)) setOpen(false);
-    });
   })();
 
-  // Mobile nav toggle
+  // Mobile nav
   (function(){
     const btn = document.getElementById('navToggle');
     const links = document.getElementById('navlinks');
@@ -311,6 +259,16 @@
     links.addEventListener('click', function(e){
       if(e.target.closest('a')) setOpen(false);
     });
+  })();
+
+  // Scroll reveal
+  (function(){
+    const els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){ els.forEach(el=>el.classList.add('in')); return; }
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, {threshold:0.12});
+    els.forEach(el=>io.observe(el));
   })();
 </script>
 
