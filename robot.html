@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>The Robot | AREC</title>
+    <meta name="description" content="The AREC robot rules. Any COTS Arduino or ESP32 can be the brain, it must be driven over WiFi from a laptop or tablet, and no other communication method is allowed.">
+    <meta name="author" content="AREC">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/vendor.css">
+
+    <script src="assets/js/modernizr.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+</head>
+
+<body id="top">
+
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <header class="s-header">
+
+        <div class="s-header__logo">
+            <a href="index.html">
+                <img src="assets/images/logo.svg" alt="AREC">
+            </a>
+        </div>
+
+        <div class="s-header__content">
+
+            <nav class="s-header__nav-wrap">
+                <ul class="s-header__nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="league.html">League</a></li>
+                    <li><a href="robot.html">Robot</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                </ul>
+            </nav>
+
+            <a href="register.html" class="btn btn--primary btn--small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                Pre-register a team
+            </a>
+
+        </div>
+
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header>
+
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg">
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <h1>Robot.</h1>
+                <div class="s-hero__content-about">
+
+                    <p>
+                    Bring any Arduino or ESP32 as the brain.<br>
+                    Drive it over WiFi from a laptop or a tablet.<br>
+                    No other link is allowed.
+                    </p>
+
+                    <footer>
+                        <div class="s-hero__content-social">
+                            <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer" aria-label="AREC on Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 100 8.32 4.16 4.16 0 000-8.32zm0 6.86a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm4.33-7.03a.97.97 0 100 1.94.97.97 0 000-1.94z"/></svg>
+                            </a>
+                            <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer" aria-label="Team management system">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18v4H3V4zm0 6h18v10H3V10zm3 3v2h5v-2H6zm8 0v2h4v-2h-4z"/></svg>
+                            </a>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="s-hero__scroll">
+            <a href="#rule" class="s-hero__scroll-link smoothscroll">
+                Scroll Down
+            </a>
+        </div>
+
+    </section>
+
+    <section id="rule" class="s-about">
+
+        <div class="horizontal-line"></div>
+
+        <div class="row">
+            <div class="column large-12">
+
+                <div class="section-title" data-num="01" data-aos="fade-up">
+                    <h3 class="h6">The One Rule</h3>
+                </div>
+
+            </div>
+
+            <div class="column large-6 w-900-stack s-about__intro-text">
+                <h1 class="display-1" data-aos="fade-up">
+                    The brain talks to your laptop or tablet over WiFi, and to nothing else.
+                </h1>
+            </div>
+
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    No Bluetooth. No radio link. No serial cable for driving. The robot is
+                    driven over WiFi with the AREC driver app, and that is the whole of the
+                    communication rule. Everything else about the robot is up to you.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="brain" class="s-services">
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="section-title" data-num="02" data-aos="fade-up">
+                    <h3 class="h6">What Counts As A Brain</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    Any COTS board with WiFi on it. If it is sold to the public and it can
+                    join a network, it counts.
+                </h1>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    We do not approve a parts list, because there is no parts list. What we
+                    check at inspection is that the robot drives over WiFi and nothing else.
+                </p>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--product-design"></span>
+                <h3 class="item-title">The ESP32 family</h3>
+                <p>
+                An ESP32, an ESP32-S3 or an ESP32-C3 will all do. WiFi is built in, there
+                are plenty of pins for a motor driver, and they cost very little.
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--branding"></span>
+                <h3 class="item-title">Arduino with WiFi</h3>
+                <p>
+                An Uno, a Nano or a Mega works as well, as long as it can reach a network.
+                A WiFi shield or module on an Arduino is fine.
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--frontend"></span>
+                <h3 class="item-title">The AREC driver app</h3>
+                <p>
+                The official driver app for Windows and macOS connects to the brain over
+                WiFi and sends the driving commands. It is the only way to drive.
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--research"></span>
+                <h3 class="item-title">No other link</h3>
+                <p>
+                Bluetooth is not allowed, and not only for driving. If the robot needs to
+                send data back, it sends it back over the same WiFi link.
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--illustration"></span>
+                <h3 class="item-title">Either network</h3>
+                <p>
+                Let the robot join the venue WiFi, or let it run its own access point and
+                connect the laptop or tablet straight to it. Both are fine, on every
+                field we run.
+                </p>
+            </div>
+            <div class="column item item-service" data-aos="fade-up">
+                <span class="service-icon service-icon--ecommerce"></span>
+                <h3 class="item-title">Build bundle</h3>
+                <p>
+                If you would rather not start from a box of parts, the build bundle in the
+                store is a ready made robot you can put a brain into and drive.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="limits" class="s-portfolio">
+
+        <div class="row s-porfolio__top">
+            <div class="column large-6 w-900-stack">
+                <div class="section-title" data-num="03" data-aos="fade-up">
+                    <h3 class="h6">Size, Weight And Power</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    Three limits, and they are the same for everyone.
+                </h1>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full collapse">
+            <div class="column" data-aos="fade-up">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Maximum size</th>
+                            <td>18 inches on a side, so a cube of 18 by 18 by 18 inches.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Maximum weight</th>
+                            <td>30 pounds, measured ready to compete.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Maximum voltage</th>
+                            <td>Nothing on the robot runs above 12 volts.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Inspection</th>
+                            <td>Every robot is checked before it is allowed on the field, so it is worth measuring it yourself first.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column" data-aos="fade-up">
+                <p class="lead">
+                Build to the limits, not to a reference robot. Plenty of teams have hit
+                the weight limit and plenty have not.
+                </p>
+                <p>
+                The full rule set lands with the game on November 1, so you can design
+                against it rather than guessing.
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="build" class="s-services">
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="section-title" data-num="04" data-aos="fade-up">
+                    <h3 class="h6">Building It</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    There is no right robot. There is a robot that fits the rules.
+                </h1>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    Here is what we would put together if it were our robot. None of it is
+                    required and none of it is special.
+                </p>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full collapse item-list">
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Chassis</h3>
+                <p>
+                Anything with two driven wheels and a caster will do. The shape does not
+                matter as long as the robot fits inside 18 inches.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Motors</h3>
+                <p>
+                Any motors you can get hold of, on 12 volts or less. Keep the whole robot
+                under 30 pounds so the motors are not carrying more than they need to.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Motor driver</h3>
+                <p>
+                One that can supply the motors you picked, and that your brain can talk
+                to over the pins it has.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Brain</h3>
+                <p>
+                An ESP32 or an Arduino with WiFi, running the code that listens for the
+                driver app and drives the motors.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Power</h3>
+                <p>
+                A battery that lasts a full match, and a charging setup that gets you
+                through a whole event day.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Build bundle</h3>
+                <p>
+                The optional way to skip all of this. A ready made robot, sold through the
+                store, that you fit a brain to. Teams who want to build from their own
+                parts are welcome to do exactly that.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="s-contact">
+
+        <div class="row narrower s-contact__top h-text-center">
+            <div class="column">
+                <h3 class="h6">Get In Touch</h3>
+                <h1 class="display-1">
+                Questions about joining, mentoring or sponsoring. A person reads every
+                message. Write to us at
+                </h1>
+            </div>
+        </div>
+
+        <div class="row h-text-center">
+            <div class="column">
+                <p class="s-contact__email" style="font-size:clamp(28px,8vw,108px);">
+                    <a href="mailto:join@arecrobotics.com">join@<wbr>arecrobotics.com</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="s-footer">
+        <div class="row row-y-top">
+
+            <div class="column large-8 medium-12">
+                <div class="row">
+                    <div class="column large-7 tab-12 s-footer__block">
+                        <h4 class="h6">Find Us</h4>
+
+                        <p>
+                        <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a><br>
+                        <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a><br>
+                        <a href="https://instagram.com/join.arec">Instagram</a>
+                        </p>
+                    </div>
+
+                    <div class="column large-5 tab-12 s-footer__block">
+                        <h4 class="h6">Follow Us</h4>
+
+                        <ul class="s-footer__list">
+                            <li><a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a></li>
+                            <li><a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Auth server</a></li>
+                            <li><a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Webmail</a></li>
+                            <li><a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column large-4 medium-12 s-footer__block--end">
+                <a href="register.html" class="btn h-full-width">Pre-register a team</a>
+
+                <div class="ss-copyright">
+                    <span>Copyright AREC 2026</span>
+                    <span>Design by <a href="https://www.styleshout.com/" target="_blank" rel="noopener noreferrer">StyleShout</a></span>
+                </div>
+            </div>
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    top
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/arec.js"></script>
+
+</body>
+
+</html>

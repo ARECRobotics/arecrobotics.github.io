@@ -1,346 +1,424 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pre-register a Team | AREC</title>
-<meta name="description" content="Pre-registration for the AREC 2027 season. Creating your team on the TMS is the registration, and any discount is applied automatically.">
-<link rel="icon" href="logo.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/site.css">
-<script>document.documentElement.classList.add('js');</script>
+
+    <meta charset="utf-8">
+    <title>Pre-register a Team | AREC</title>
+    <meta name="description" content="Pre-registration for the AREC 2027 season. Creating your team on the team management system is the registration, and any discount is applied automatically.">
+    <meta name="author" content="AREC">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/vendor.css">
+
+    <script src="assets/js/modernizr.js"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
 </head>
-<body>
 
-<header>
-  <nav>
-    <a class="brand" href="index.html">
-      <img src="logo.png" alt="AREC logo">
-      <span>AREC</span>
-    </a>
-    <div class="navlinks" id="navlinks">
-      <a href="index.html"><span class="n">01</span>Home</a>
-      <a href="league.html"><span class="n">02</span>League</a>
-      <a href="game.html"><span class="n">03</span>Season</a>
-      <a href="register.html" aria-current="page"><span class="n">04</span>Register</a>
-      <a href="volunteer.html"><span class="n">05</span>Volunteer</a>
-      <a class="nav-cta-mobile" href="https://tms.arecrobotics.com/auth/login">Sign in to the TMS</a>
+<body id="top">
+
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
     </div>
-    <div class="navright">
-      <div class="dropdown" id="toolsDropdown">
-        <button type="button" class="dropdown-toggle" id="toolsToggle" aria-haspopup="true" aria-expanded="false" aria-controls="toolsMenu">
-          Tools
-          <svg class="chev" viewBox="0 0 10 10" fill="none" aria-hidden="true"><path d="M1 3l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <ul class="dropdown-menu" id="toolsMenu" aria-labelledby="toolsToggle">
-          <li>
-            <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">
-              <strong>Auth server</strong>
-              <small>auth.albt.qzz.io</small>
+
+    <header class="s-header">
+
+        <div class="s-header__logo">
+            <a href="index.html">
+                <img src="assets/images/logo.svg" alt="AREC">
             </a>
-          </li>
-          <li>
-            <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">
-              <strong>Email</strong>
-              <small>mail.arecrobotics.com</small>
+        </div>
+
+        <div class="s-header__content">
+
+            <nav class="s-header__nav-wrap">
+                <ul class="s-header__nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="league.html">League</a></li>
+                    <li><a href="robot.html">Robot</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                </ul>
+            </nav>
+
+            <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer" class="btn btn--primary btn--small">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
+                Pre-register a team
             </a>
-          </li>
-          <li>
-            <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">
-              <strong>Finances</strong>
-              <small>hcb.hackclub.com/arec</small>
+
+        </div>
+
+        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
+
+    </header>
+
+    <section id="hero" class="s-hero target-section">
+
+        <div class="s-hero__bg">
+            <div class="gradient-overlay"></div>
+        </div>
+
+        <div class="row s-hero__content">
+            <div class="column">
+
+                <h1>Register.</h1>
+                <div class="s-hero__content-about">
+
+                    <p>
+                    There is no separate form.<br>
+                    Creating your team on the team management system<br>
+                    is the registration.
+                    </p>
+
+                    <footer>
+                        <div class="s-hero__content-social">
+                            <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer" aria-label="AREC on Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 100 8.32 4.16 4.16 0 000-8.32zm0 6.86a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm4.33-7.03a.97.97 0 100 1.94.97.97 0 000-1.94z"/></svg>
+                            </a>
+                            <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer" aria-label="Team management system">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18v4H3V4zm0 6h18v10H3V10zm3 3v2h5v-2H6zm8 0v2h4v-2h-4z"/></svg>
+                            </a>
+                        </div>
+                    </footer>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="s-hero__scroll">
+            <a href="#how" class="s-hero__scroll-link smoothscroll">
+                Scroll Down
             </a>
-          </li>
-        </ul>
-      </div>
-      <a class="btn btn-solid" href="https://tms.arecrobotics.com/auth/login" target="_blank" rel="noopener noreferrer">Sign in to the TMS</a>
-    </div>
-    <button type="button" class="navtoggle" id="navToggle" aria-expanded="false" aria-controls="navlinks" aria-label="Menu">
-      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-        <path class="bar-top" d="M4 8h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path class="bar-mid" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-        <path class="bar-bot" d="M4 16h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </button>
-  </nav>
-</header>
-
-<section class="cover">
-  <div class="wrap">
-    <div class="cover-grid">
-      <h1 class="cover-title">
-        <span>Pre-register</span>
-        <span class="indent">your team.</span>
-      </h1>
-      <p class="lead cover-lead">There is no separate form. Creating your team on the TMS is the pre-registration, and any discount we announce is applied to your account automatically.</p>
-      <div class="actions cover-actions">
-          <a class="btn btn-solid" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">Create an account</a>
-          <a class="btn btn-outline" href="https://tms.arecrobotics.com/auth/login" target="_blank" rel="noopener noreferrer">Sign in to the TMS</a>
         </div>
-    </div>
-  </div>
-</section>
 
-<section>
-  <div class="wrap split">
-    <div class="section-head">
-      <h2>How to register</h2>
-      <p>Three steps, all on our own accounts.</p>
-    </div>
-    <div>
-      <ol class="clauses">
-        <li class="clause">
-          <span class="clause-n">01</span>
-          <div>
-            <h3>Create your AREC account</h3>
-            <p>Every AREC service uses the same sign-in. Make one account on the auth server and use it for the TMS, events, and every tool we run. It takes about a minute.</p>
-            <div class="actions" style="margin-top:22px;">
-              <a class="btn btn-outline" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">Create an account</a>
-              <a class="btn btn-outline" href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Already have one</a>
+    </section>
+
+    <section id="how" class="s-about">
+
+        <div class="horizontal-line"></div>
+
+        <div class="row">
+            <div class="column large-12">
+
+                <div class="section-title" data-num="01" data-aos="fade-up">
+                    <h3 class="h6">How To Register</h3>
+                </div>
+
             </div>
-          </div>
-        </li>
-        <li class="clause">
-          <span class="clause-n">02</span>
-          <div>
-            <h3>Sign in to the TMS</h3>
-            <p>Sign in with your AREC account, or with HackClub if that is what you use. You land in your dashboard.</p>
-            <div class="actions" style="margin-top:22px;">
-              <a class="btn btn-outline" href="https://tms.arecrobotics.com/auth/login" target="_blank" rel="noopener noreferrer">Open the TMS</a>
-              <a class="btn btn-outline" href="https://tms.arecrobotics.com/events" target="_blank" rel="noopener noreferrer">Browse events</a>
+
+            <div class="column large-6 w-900-stack s-about__intro-text">
+                <h1 class="display-1" data-aos="fade-up">
+                    Three steps, all on our own accounts. It takes about ten minutes.
+                </h1>
             </div>
-          </div>
-        </li>
-        <li class="clause">
-          <span class="clause-n">03</span>
-          <div>
-            <h3>Create your team</h3>
-            <p>Set up your team, add your teammates and mentors, and you are pre-registered. There is no second form. When fees are finalised and registration opens on October 26, your team is already in the system.</p>
-            <div class="actions" style="margin-top:22px;">
-              <a class="btn btn-solid" href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Go to the TMS</a>
+
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    Nothing is charged when you sign up, and any discount we announce is
+                    applied to your team without you doing anything about it.
+                </p>
             </div>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap split">
-    <div class="section-head">
-      <h2>What to have ready</h2>
-      <p>You can register with very little. This saves a round of emails later.</p>
-    </div>
-    <div>
-      <table class="spec">
-        <tbody>
-          <tr>
-            <th scope="row">team name</th>
-            <td>Whatever you want to be called.</td>
-          </tr>
-          <tr>
-            <th scope="row">school or group</th>
-            <td>Your school, organization, or community group. Write "independent" if you are unaffiliated.</td>
-          </tr>
-          <tr>
-            <th scope="row">captain contact</th>
-            <td>The name and email of whoever is running the team.</td>
-          </tr>
-          <tr>
-            <th scope="row">team number</th>
-            <td>Optional. We assign one if you skip it.</td>
-          </tr>
-          <tr>
-            <th scope="row">students</th>
-            <td>Roughly how many, so we can plan kits.</td>
-          </tr>
-          <tr>
-            <th scope="row">adult mentors</th>
-            <td>Who signs off for the team.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap split">
-    <div class="section-head">
-      <h2>What registering gets you</h2>
-      <p>Everything we do for teams comes from the same record.</p>
-    </div>
-    <div>
-      <table class="spec">
-        <tbody>
-          <tr>
-            <th scope="row">discounts</th>
-            <td>Applied automatically. Whatever fee structure and discount we settle on reaches your team without you doing anything.</td>
-          </tr>
-          <tr>
-            <th scope="row">events</th>
-            <td>Sign up for the events you want from the same account. Events open for registration on October 30.</td>
-          </tr>
-          <tr>
-            <th scope="row">workshops and kits</th>
-            <td>Build workshops and mentorship for new teams. We also work out which teams need a subsidised kit or spare parts.</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap split">
-    <div class="section-head">
-      <h2>Before you start</h2>
-      <p>Straight answers to the questions we get most.</p>
-    </div>
-    <div>
-      <ul class="index">
-        <li>
-          <span class="index-term">When does it open</span>
-          <span class="index-def">Team registration opens on October 26, 2026. You can create your account and your team ahead of time.</span>
-        </li>
-        <li>
-          <span class="index-term">What does it cost</span>
-          <span class="index-def">Fees are still to be announced, and should be confirmed within a week of registration opening. Nothing is charged at sign-up.</span>
-        </li>
-        <li>
-          <span class="index-term">Do we have to be a school</span>
-          <span class="index-def">No. Schools, community organizations, and independent student teams are all eligible. If your school will not back you, we still want you in the league.</span>
-        </li>
-        <li>
-          <span class="index-term">Do I need a robot already</span>
-          <span class="index-def">No. Plenty of teams register first and build later. That is what the free workshops and mentorship are for.</span>
-        </li>
-        <li>
-          <span class="index-term">Can I run an event too</span>
-          <span class="index-def">Yes. Event applications open on October 24, so you can apply to run a community or official event alongside registering a team.</span>
-        </li>
-        <li>
-          <span class="index-term">What if I am stuck</span>
-          <span class="index-def">Email <a class="link" href="mailto:join@arecrobotics.com">join@arecrobotics.com</a> and a person will walk you through it.</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="band">
-  <div class="wrap band-grid">
-    <div>
-      <h2>One account. A couple of minutes.</h2>
-      <p>Create your AREC account, sign in to the TMS, and create your team. That is pre-registration for the 2027 season.</p>
-    </div>
-    <div class="actions">
-      <a class="btn btn-solid" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">Create an account</a>
-      <a class="btn" href="volunteer.html">Volunteer</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="wrap">
-    <div class="foot-grid">
-      <div>
-        <h2 style="font-size:32px;">Alliance for Robotics Education and Competition</h2>
-        <p style="margin-top:18px;">A student-led robotics league on affordable hardware.</p>
-      </div>
-      <div class="foot-cols">
-        <div class="foot-col">
-          <h4>League</h4>
-          <a href="index.html">Home</a>
-          <a href="league.html">How it works</a>
-          <a href="league.html#sponsors">Sponsors</a>
-          <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a>
         </div>
-        <div class="foot-col">
-          <h4>Season</h4>
-          <a href="game.html">Game piece</a>
-          <a href="game.html#timeline">Timeline</a>
-          <a href="register.html">Pre-register a team</a>
-          <a href="volunteer.html">Volunteer</a>
+
+        <div class="row block-large-1-2 block-tab-full s-about__process item-list">
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Create your account</h3>
+                <p>
+                Every AREC service uses the same sign in. Make one account on the auth
+                server and use it for the team management system, for events, and for
+                every tool we run.
+                </p>
+                <p>
+                    <a class="btn btn--stroke btn--small" href="https://auth.albt.qzz.io/signup" target="_blank" rel="noopener noreferrer">Create an account</a>
+                    <a class="btn btn--stroke btn--small" href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Already have one</a>
+                </p>
+            </div>
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Sign in to the TMS</h3>
+                <p>
+                Sign in with your AREC account, or with HackClub if that is what you use.
+                You land in your dashboard.
+                </p>
+                <p>
+                    <a class="btn btn--stroke btn--small" href="https://tms.arecrobotics.com/auth/login" target="_blank" rel="noopener noreferrer">Open the TMS</a>
+                    <a class="btn btn--stroke btn--small" href="https://tms.arecrobotics.com/events" target="_blank" rel="noopener noreferrer">Browse events</a>
+                </p>
+            </div>
+            <div class="column item item-process" data-aos="fade-up">
+                <h3 class="item-title">Create your team</h3>
+                <p>
+                Set up your team, add your teammates and mentors, and you are
+                pre-registered. There is no second form. When fees are finalised and
+                registration opens on October 26, your team is already in the system.
+                </p>
+                <p>
+                    <a class="btn btn--primary btn--small" href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Go to the TMS</a>
+                </p>
+            </div>
         </div>
-        <div class="foot-col">
-          <h4>Contact</h4>
-          <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
-          <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a>
-          <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <a href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
+
+    </section>
+
+    <section id="ready" class="s-services">
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="section-title" data-num="02" data-aos="fade-up">
+                    <h3 class="h6">What To Have Ready</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    You can register with very little. This saves a round of emails later.
+                </h1>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <p class="lead" data-aos="fade-up">
+                    None of this needs a robot, and none of it needs a decision from your
+                    school. Bring what you have.
+                </p>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="foot-bottom">
-      <span>© 2026 AREC</span>
-      <span>2027 season program</span>
-    </div>
-  </div>
-</footer>
 
-<script>
-  (function(){
-    const dd = document.getElementById('toolsDropdown');
-    const toggle = document.getElementById('toolsToggle');
-    if(!dd || !toggle) return;
-    function setOpen(open){
-      dd.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-    }
-    toggle.addEventListener('click', function(e){
-      e.stopPropagation();
-      setOpen(!dd.classList.contains('open'));
-    });
-    document.addEventListener('click', function(e){
-      if(!dd.contains(e.target)) setOpen(false);
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && dd.classList.contains('open')){
-        setOpen(false);
-        toggle.focus();
-      }
-    });
-  })();
+        <div class="row block-large-1-2 block-tab-full collapse">
+            <div class="column" data-aos="fade-up">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Team name</th>
+                            <td>Whatever you want to be called.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">School or group</th>
+                            <td>Your school, organisation, or community group. Write independent if you are not affiliated with one.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Captain contact</th>
+                            <td>The name and email of whoever is running the team.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Team number</th>
+                            <td>Optional. We assign one if you skip it.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Students</th>
+                            <td>Roughly how many, so we can plan workshops.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Adult mentors</th>
+                            <td>Who signs off for the team.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-  (function(){
-    const btn = document.getElementById('navToggle');
-    const links = document.getElementById('navlinks');
-    if(!btn || !links) return;
-    function setOpen(open){
-      links.classList.toggle('open', open);
-      btn.setAttribute('aria-expanded', String(open));
-    }
-    btn.addEventListener('click', function(e){
-      e.stopPropagation();
-      setOpen(!links.classList.contains('open'));
-    });
-    document.addEventListener('click', function(e){
-      if(!links.contains(e.target) && !btn.contains(e.target)) setOpen(false);
-    });
-    document.addEventListener('keydown', function(e){
-      if(e.key === 'Escape' && links.classList.contains('open')){
-        setOpen(false);
-        btn.focus();
-      }
-    });
-    links.addEventListener('click', function(e){
-      if(e.target.closest('a')) setOpen(false);
-    });
-  })();
+    </section>
 
-  (function(){
-    const els = document.querySelectorAll('.reveal');
-    if(!('IntersectionObserver' in window)){ els.forEach(el=>el.classList.add('in')); return; }
-    const io = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:0.12});
-    els.forEach(el=>io.observe(el));
-  })();
-</script>
+    <section id="gets" class="s-portfolio">
+
+        <div class="row s-porfolio__top">
+            <div class="column large-6 w-900-stack">
+                <div class="section-title" data-num="03" data-aos="fade-up">
+                    <h3 class="h6">What Registering Gets You</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    Everything we do for teams comes from the same record.
+                </h1>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full collapse">
+            <div class="column" data-aos="fade-up">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Discounts</th>
+                            <td>Applied automatically. Whatever fee structure and discount we settle on reaches your team without you doing anything.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Events</th>
+                            <td>Sign up for the events you want from the same account. Events open for registration on October 30.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Workshops</th>
+                            <td>Build workshops and mentorship for new teams, and help finding the hardware you need.</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">A place in the season</th>
+                            <td>Your team is on the list for the 2027 season, with a team number and a schedule.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="column" data-aos="fade-up">
+                <p class="lead">
+                    The sooner you register, the sooner we can put you on a workshop and
+                    sort out the hardware side of things.
+                </p>
+                <p>
+                    <a class="btn btn--primary btn--small" href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Create your team</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="questions" class="s-services">
+
+        <div class="row">
+            <div class="column large-12">
+                <div class="section-title" data-num="04" data-aos="fade-up">
+                    <h3 class="h6">Before You Start</h3>
+                </div>
+            </div>
+            <div class="column large-6 w-900-stack">
+                <h1 class="display-1" data-aos="fade-up">
+                    Straight answers to the questions we get most.
+                </h1>
+            </div>
+        </div>
+
+        <div class="row block-large-1-2 block-tab-full collapse item-list">
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">When does it open</h3>
+                <p>
+                Team registration opens on October 26, 2026. You can create your account
+                and your team ahead of time.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">What does it cost</h3>
+                <p>
+                Fees are still to be announced, and should be confirmed within a week of
+                registration opening. Nothing is charged at sign up.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Do we have to be a school</h3>
+                <p>
+                No. Schools, community organisations, and independent student teams are
+                all eligible. If your school will not back you, we still want you in the
+                league.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Do I need a robot already</h3>
+                <p>
+                No. Plenty of teams register first and build later. That is what the free
+                workshops and the mentorship are for.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">Can I run an event too</h3>
+                <p>
+                Yes. Event applications open on October 24, so you can apply to run a
+                community or official event alongside registering a team.
+                </p>
+            </div>
+
+            <div class="column item" data-aos="fade-up">
+                <h3 class="item-title">What if I am stuck</h3>
+                <p>
+                Email
+                <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a>
+                and a person will walk you through it.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="s-contact">
+
+        <div class="row narrower s-contact__top h-text-center">
+            <div class="column">
+                <h3 class="h6">Get In Touch</h3>
+                <h1 class="display-1">
+                Questions about joining, mentoring or sponsoring. A person reads every
+                message. Write to us at
+                </h1>
+            </div>
+        </div>
+
+        <div class="row h-text-center">
+            <div class="column">
+                <p class="s-contact__email" style="font-size:clamp(28px,8vw,108px);">
+                    <a href="mailto:join@arecrobotics.com">join@<wbr>arecrobotics.com</a>
+                </p>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="s-footer">
+        <div class="row row-y-top">
+
+            <div class="column large-8 medium-12">
+                <div class="row">
+                    <div class="column large-7 tab-12 s-footer__block">
+                        <h4 class="h6">Find Us</h4>
+
+                        <p>
+                        <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a><br>
+                        <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a><br>
+                        <a href="https://instagram.com/join.arec">Instagram</a>
+                        </p>
+                    </div>
+
+                    <div class="column large-5 tab-12 s-footer__block">
+                        <h4 class="h6">Follow Us</h4>
+
+                        <ul class="s-footer__list">
+                            <li><a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a></li>
+                            <li><a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Auth server</a></li>
+                            <li><a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Webmail</a></li>
+                            <li><a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column large-4 medium-12 s-footer__block--end">
+                <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer" class="btn h-full-width">Pre-register a team</a>
+
+                <div class="ss-copyright">
+                    <span>Copyright AREC 2026</span>
+                    <span>Design by <a href="https://www.styleshout.com/" target="_blank" rel="noopener noreferrer">StyleShout</a></span>
+                </div>
+            </div>
+
+            <div class="ss-go-top">
+                <a class="smoothscroll" title="Back to Top" href="#top">
+                    top
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.2.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/arec.js"></script>
 
 </body>
+
 </html>

@@ -20,7 +20,6 @@ const ACCENT = 0xc8372a;
 
 const stage = document.getElementById('viewerStage');
 const statusEl = document.getElementById('viewerStatus');
-const statusText = document.getElementById('viewerStatusText');
 const fallbackNote = document.getElementById('viewerFallbackNote');
 const spinBtn = document.getElementById('viewerSpin');
 const resetBtn = document.getElementById('viewerReset');
@@ -49,8 +48,13 @@ function init() {
   renderer.toneMappingExposure = 1.15;
   stage.appendChild(renderer.domElement);
 
+  // The stage is a Flare .video-container box, so the canvas is pinned to
+  // its padding box rather than laid out in flow.
+  renderer.domElement.style.cssText =
+    'position:absolute;top:0;left:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab;';
+
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0xf8f6f0, 5.5, 12);
+  scene.fog = new THREE.Fog(0x14171b, 5.5, 12);
 
   // studio environment so the metal/plastic reads properly
   const pmrem = new THREE.PMREMGenerator(renderer);
@@ -104,7 +108,7 @@ function init() {
 
   const shadowPlane = new THREE.Mesh(
     new THREE.PlaneGeometry(14, 14),
-    new THREE.ShadowMaterial({ opacity: 0.16 })
+    new THREE.ShadowMaterial({ opacity: 0.4 })
   );
   shadowPlane.rotation.x = -Math.PI / 2;
   shadowPlane.position.y = FLOOR_Y;
@@ -119,8 +123,8 @@ function init() {
       uniforms: {
         uFine: { value: 0.25 },
         uMajor: { value: 1.0 },
-        uColor: { value: new THREE.Color(0x8f897a) },
-        uColorMajor: { value: new THREE.Color(0x60594a) }
+        uColor: { value: new THREE.Color(0x363b42) },
+        uColorMajor: { value: new THREE.Color(0x565c64) }
       },
       vertexShader: `
         varying vec3 vWorld;
@@ -217,10 +221,8 @@ function init() {
     })
     .catch(() => {
       addPiece(placeholderGeometry());
-      fallbackNote.classList.add('show');
-      statusEl.classList.remove('ready');
-      statusEl.classList.add('error');
-      statusText.textContent = 'Placeholder model. Add assets/game-element.stl';
+      if (fallbackNote) fallbackNote.style.display = 'block';
+      setStatus('Placeholder model. Add assets/game-element.stl', 'error');
     });
 
   function addPiece(geometry) {
@@ -353,8 +355,13 @@ function init() {
     controls.autoRotate = on;
     if (spinBtn) {
       spinBtn.setAttribute('aria-pressed', String(on));
-      const label = spinBtn.querySelector('[data-label]');
-      if (label) label.textContent = on ? 'Pause spin' : 'Auto spin';
+      spinBtn.textContent = on ? 'Pause spin' : 'Auto spin';
+      // btn--primary is a Flare class, so this stays inside the template
+      if (on) {
+        spinBtn.classList.add('btn--primary');
+      } else {
+        spinBtn.classList.remove('btn--primary');
+      }
     }
   }
   setSpin(controls.autoRotate);
@@ -438,14 +445,16 @@ function init() {
   animate();
 
   /* ---------- status helpers ---------- */
+  function setStatus(text, tone) {
+    if (!statusEl) return;
+    statusEl.textContent = text;
+    statusEl.style.color = tone === 'error' ? '#e06a5d' : (tone === 'ready' ? '#a7abb1' : '#7b818a');
+  }
+
   function ready() {
-    statusEl.classList.add('ready');
-    statusEl.classList.remove('error');
-    statusText.textContent = 'Game piece loaded. Drag to orbit';
+    setStatus('Game piece loaded. Drag to orbit.', 'ready');
   }
   function fail(msg) {
-    statusEl.classList.remove('ready');
-    statusEl.classList.add('error');
-    statusText.textContent = msg;
+    setStatus(msg, 'error');
   }
 }
