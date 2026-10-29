@@ -16,7 +16,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 
 const STL_PATH = 'assets/game-element.stl';
-const ACCENT = 0xc8372a;
+const ACCENT = 0x2b46f0;
 
 const stage = document.getElementById('viewerStage');
 const statusEl = document.getElementById('viewerStatus');
@@ -48,13 +48,13 @@ function init() {
   renderer.toneMappingExposure = 1.15;
   stage.appendChild(renderer.domElement);
 
-  // The stage is a Flare .video-container box, so the canvas is pinned to
-  // its padding box rather than laid out in flow.
+  // The stage is a fixed-ratio .viewer box, so the canvas is pinned to its
+  // padding box rather than laid out in flow.
   renderer.domElement.style.cssText =
     'position:absolute;top:0;left:0;width:100%;height:100%;display:block;touch-action:none;cursor:grab;';
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.Fog(0x14171b, 5.5, 12);
+  scene.fog = new THREE.Fog(0x0c0c0f, 5.5, 12);
 
   // studio environment so the metal/plastic reads properly
   const pmrem = new THREE.PMREMGenerator(renderer);
@@ -95,7 +95,7 @@ function init() {
   key.shadow.radius = 3;
   scene.add(key);
 
-  const rim = new THREE.DirectionalLight(0xe63946, 1.1);
+  const rim = new THREE.DirectionalLight(0x6f86ff, 1.2);
   rim.position.set(-3.4, 1.6, -2.6);
   scene.add(rim);
 
@@ -123,8 +123,8 @@ function init() {
       uniforms: {
         uFine: { value: 0.25 },
         uMajor: { value: 1.0 },
-        uColor: { value: new THREE.Color(0x363b42) },
-        uColorMajor: { value: new THREE.Color(0x565c64) }
+        uColor: { value: new THREE.Color(0x2a2a33) },
+        uColorMajor: { value: new THREE.Color(0x4c4c5c) }
       },
       vertexShader: `
         varying vec3 vWorld;
@@ -356,12 +356,7 @@ function init() {
     if (spinBtn) {
       spinBtn.setAttribute('aria-pressed', String(on));
       spinBtn.textContent = on ? 'Pause spin' : 'Auto spin';
-      // btn--primary is a Flare class, so this stays inside the template
-      if (on) {
-        spinBtn.classList.add('btn--primary');
-      } else {
-        spinBtn.classList.remove('btn--primary');
-      }
+      spinBtn.classList.toggle('is-active', on);
     }
   }
   setSpin(controls.autoRotate);
@@ -448,11 +443,11 @@ function init() {
   function setStatus(text, tone) {
     if (!statusEl) return;
     statusEl.textContent = text;
-    statusEl.style.color = tone === 'error' ? '#e06a5d' : (tone === 'ready' ? '#a7abb1' : '#7b818a');
+    statusEl.style.color = tone === 'error' ? '#b3261e' : (tone === 'ready' ? '#2b46f0' : '#7c7c85');
   }
 
   function ready() {
-    setStatus('Game piece loaded. Drag to orbit.', 'ready');
+    setStatus('Model loaded. Drag to turn it.', 'ready');
   }
   function fail(msg) {
     setStatus(msg, 'error');

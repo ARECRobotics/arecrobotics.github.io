@@ -1,18 +1,24 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html lang="en">
 <head>
 
     <meta charset="utf-8">
-    <title>The League | AREC</title>
-    <meta name="description" content="How the AREC league works, what a team gets, the 2027 season timeline, the game piece, and how sponsorship lowers the cost of taking part.">
+    <title>The league — AREC</title>
+    <meta name="description" content="How the AREC season works: the format, what teams get, the 2027 dates, the game piece, and how sponsorship keeps the league affordable.">
     <meta name="author" content="AREC">
-
+    <meta name="theme-color" content="#f6f6f3">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&amp;family=Geist+Mono:wght@400..600&amp;display=swap">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/vendor.css">
 
-    <script src="assets/js/modernizr.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+
+    <script>document.documentElement.classList.add('js');</script>
 
     <script type="importmap">
     {
@@ -23,502 +29,503 @@
     }
     </script>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-
 </head>
 
 <body id="top">
 
-    <div id="preloader">
-        <div id="loader" class="dots-fade">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="s-header">
+    <header class="site-header">
+        <div class="shell site-header__inner">
 
-        <div class="s-header__logo">
-            <a href="index.html">
-                <img src="assets/images/logo.svg" alt="AREC">
+            <a class="brand" href="index.html" aria-label="AREC home">
+                <svg class="brand__mark" viewBox="0 0 98 100" aria-hidden="true">
+                    <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter">
+                        <polyline points="49.2,27.2 49.2,73.2"/>
+                        <polyline points="23.8,48.8 75.1,48.8"/>
+                        <polyline points="49.2,27.2 25.7,1.3"/>
+                        <polyline points="49.2,27.2 69.7,1.3"/>
+                        <polyline points="49.2,73.2 25.7,97.9"/>
+                        <polyline points="49.2,73.2 69.7,97.9"/>
+                        <polyline points="23.8,48.8 1.3,29.8"/>
+                        <polyline points="23.8,48.8 1.3,71.7"/>
+                        <polyline points="75.1,48.8 96.3,29.8"/>
+                        <polyline points="75.1,48.8 96.3,71.7"/>
+                        <polyline points="36.7,1.3 25.7,1.3 25.7,12.3"/>
+                        <polyline points="58.7,1.3 69.7,1.3 69.7,12.3"/>
+                        <polyline points="12.3,29.8 1.3,29.8 1.3,40.8"/>
+                        <polyline points="12.3,71.7 1.3,71.7 1.3,60.7"/>
+                        <polyline points="85.3,29.8 96.3,29.8 96.3,40.8"/>
+                        <polyline points="85.3,71.7 96.3,71.7 96.3,60.7"/>
+                        <polyline points="36.7,97.9 25.7,97.9 25.7,86.9"/>
+                        <polyline points="58.7,97.9 69.7,97.9 69.7,86.9"/>
+                    </g>
+                </svg>
+                <span class="brand__word">AREC</span>
             </a>
+
+            <nav class="nav" aria-label="Main">
+                <a href="index.html">Home</a>
+                <a href="league.html" aria-current="page">League</a>
+                <a href="robot.html">Robot</a>
+                <a href="register.html">Register</a>
+                <a href="volunteer.html">Volunteer</a>
+            </nav>
+
+            <div class="header-actions">
+
+                <div class="tools">
+                    <button class="tools__toggle" type="button" aria-expanded="false" aria-controls="tools-menu" aria-label="More links">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="3" width="7" height="7" rx="1.6"/>
+                                <rect x="14" y="3" width="7" height="7" rx="1.6"/>
+                                <rect x="3" y="14" width="7" height="7" rx="1.6"/>
+                                <rect x="14" y="14" width="7" height="7" rx="1.6"/>
+                            </g>
+                        </svg>
+                    </button>
+
+                    <div class="tools__menu" id="tools-menu" hidden>
+                        <p class="tools__label">Your AREC</p>
+                        <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team dashboard<span>tms.arecrobotics.com</span></a>
+                        <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Account<span>Sign in or create one</span></a>
+                        <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Email<span>mail.arecrobotics.com</span></a>
+                        <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances<span>hcb.hackclub.com/arec</span></a>
+                    </div>
+                </div>
+
+                <a class="btn btn--sm btn--primary header-cta" href="register.html">Register</a>
+
+                <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
+                    <span></span>
+                    <span></span>
+                </button>
+
+            </div>
         </div>
 
-        <div class="s-header__content">
-
-            <nav class="s-header__nav-wrap">
-                <ul class="s-header__nav">
+        <div class="mobile-nav" id="mobile-nav" hidden>
+            <nav class="shell" aria-label="Mobile">
+                <ul class="mobile-nav__list">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="league.html">League</a></li>
+                    <li><a href="league.html" aria-current="page">League</a></li>
                     <li><a href="robot.html">Robot</a></li>
                     <li><a href="register.html">Register</a></li>
                     <li><a href="volunteer.html">Volunteer</a></li>
                 </ul>
+
+                <p class="mobile-nav__label">Your AREC</p>
+                <div class="mobile-nav__tools">
+                    <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team dashboard<span>tms.arecrobotics.com</span></a>
+                    <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Account<span>Sign in</span></a>
+                    <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Email<span>Webmail</span></a>
+                    <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances<span>Ledger</span></a>
+                </div>
+
+                <a class="btn btn--primary btn--block" href="register.html">Register a team</a>
             </nav>
-
-            <a href="register.html" class="btn btn--primary btn--small">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M24 0l-6 22-8.129-7.239 7.802-8.234-10.458 7.227-7.215-1.754 24-12zm-15 16.668v7.332l3.258-4.431-3.258-2.901z"/></svg>
-                Pre-register a team
-            </a>
-
         </div>
-
-        <a class="s-header__menu-toggle" href="#0"><span>Menu</span></a>
-
     </header>
 
-    <section id="hero" class="s-hero target-section">
+    <main id="main">
 
-        <div class="s-hero__bg">
-            <div class="gradient-overlay"></div>
-        </div>
-
-        <div class="row s-hero__content">
-            <div class="column">
-
-                <h1>League.</h1>
-                <div class="s-hero__content-about">
-
-                    <p>
-                    One season, the same rules for everybody.<br>
-                    Build a robot, drive it over WiFi,<br>
-                    and play the game against other teams.
+        <section class="page-hero">
+            <div class="shell">
+                <div class="page-hero__top">
+                    <p class="eyebrow"><span class="eyebrow__num">01</span> The league</p>
+                    <span class="page-hero__tag">Season 2027</span>
+                </div>
+                <div class="page-hero__grid">
+                    <h1>One season.<br>Same rules.<br>Different robots.</h1>
+                    <p class="lead">
+                        How the year works, what your team gets, and what is happening when.
+                        The short version: you build the robot, we bring the field.
                     </p>
-
-                    <footer>
-                        <div class="s-hero__content-social">
-                            <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer" aria-label="AREC on Instagram">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zm0 5.68a4.16 4.16 0 100 8.32 4.16 4.16 0 000-8.32zm0 6.86a2.7 2.7 0 110-5.4 2.7 2.7 0 010 5.4zm4.33-7.03a.97.97 0 100 1.94.97.97 0 000-1.94z"/></svg>
-                            </a>
-                            <a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer" aria-label="Team management system">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18v4H3V4zm0 6h18v10H3V10zm3 3v2h5v-2H6zm8 0v2h4v-2h-4z"/></svg>
-                            </a>
-                        </div>
-                    </footer>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="s-hero__scroll">
-            <a href="#how" class="s-hero__scroll-link smoothscroll">
-                Scroll Down
-            </a>
-        </div>
-
-    </section>
-
-    <section id="how" class="s-about">
-
-        <div class="horizontal-line"></div>
-
-        <div class="row">
-            <div class="column large-12">
-
-                <div class="section-title" data-num="01" data-aos="fade-up">
-                    <h3 class="h6">How The League Works</h3>
-                </div>
-
-            </div>
-
-            <div class="column large-6 w-900-stack s-about__intro-text">
-                <h1 class="display-1" data-aos="fade-up">
-                    Every team builds its own robot. The rules are the same for all of them.
-                </h1>
-            </div>
-
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                    There is no reference robot and no parts list you have to follow. You
-                    pick a chassis, you pick motors, and you put a WiFi brain in it. The one
-                    thing you cannot change is how the robot is driven.
-                </p>
-            </div>
-        </div>
-
-        <div class="row block-large-1-2 block-tab-full s-about__process item-list">
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Register</h3>
-                <p>
-                Create a team on the team management system and you are in. That is the
-                whole registration, and nothing is charged on the day.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Build</h3>
-                <p>
-                Any robot you like, as long as it fits inside 18 inches, stays under 30
-                pounds and runs on 12 volts or less.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Drive</h3>
-                <p>
-                The AREC driver app on a laptop or a tablet, talking to the brain over
-                WiFi. No Bluetooth, no radio link, no serial cable for driving.
-                </p>
-            </div>
-            <div class="column item item-process" data-aos="fade-up">
-                <h3 class="item-title">Compete</h3>
-                <p>
-                Sign up for the events you want, turn up, and play. Scoring, referees
-                and the game piece are handled by us.
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="services" class="s-services">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="02" data-aos="fade-up">
-                    <h3 class="h6">What A Team Gets</h3>
                 </div>
             </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    Support that is included, rather than sold on the side.
-                </h1>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                    Workshops, mentorship, the rule set, and the money to make it all
-                    work. None of it is an extra you have to ask for.
-                </p>
-            </div>
-        </div>
+        </section>
 
-        <div class="row block-large-1-2 block-tab-full s-services__services item-list">
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--product-design"></span>
-                <h3 class="item-title">Build it yourself</h3>
-                <p>
-                Nothing about the robot is fixed. Any chassis, any motors, any motor
-                driver. Build it from parts you already own, or buy the build bundle from
-                the store and fit your own brain.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--branding"></span>
-                <h3 class="item-title">WiFi driving</h3>
-                <p>
-                The brain connects to the driver app over WiFi and nothing else. Either
-                join the venue network or let the robot run its own access point and
-                connect straight to it.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--frontend"></span>
-                <h3 class="item-title">Free workshops</h3>
-                <p>
-                Hands on sessions where we help you get a robot built and working. No
-                experience needed, and no charge for teams in the league.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--research"></span>
-                <h3 class="item-title">One rule set</h3>
-                <p>
-                The same rules for everybody. Size, weight, voltage and the WiFi driving
-                rule, published before the season starts so you can build to it.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--illustration"></span>
-                <h3 class="item-title">Real events</h3>
-                <p>
-                Community and official events, refereed and scored, with a game piece you
-                can print yourself or order from the store.
-                </p>
-            </div>
-            <div class="column item item-service" data-aos="fade-up">
-                <span class="service-icon service-icon--ecommerce"></span>
-                <h3 class="item-title">Money for robots</h3>
-                <p>
-                Sponsorships and donations pay for hardware, workshops and entry fees, so
-                that no team is priced out of the league.
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="season" class="s-portfolio">
-
-        <div class="row s-porfolio__top">
-            <div class="column large-6 w-900-stack">
-                <div class="section-title" data-num="03" data-aos="fade-up">
-                    <h3 class="h6">The 2027 Season</h3>
-                </div>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    Dates we have locked in. Everything else announced later!
-                </h1>
-            </div>
-        </div>
-
-        <div class="row block-large-1-2 block-tab-full collapse item-list">
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Oct 24</h3>
-                <p>
-                Event creation opens. Anyone can apply to run an event, community or
-                official. You need a venue, a field, and the drive to run a competition.
-                </p>
-            </div>
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Oct 26</h3>
-                <p>
-                Team registration opens. Creating your team on the team management system
-                is the registration, and any discount is applied automatically. Fees are
-                still to be announced.
-                </p>
-            </div>
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Oct 30</h3>
-                <p>
-                Event registration opens. Sign up for the events you want to attend. Event
-                applications and team signups both happen inside the TMS.
-                </p>
-            </div>
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Nov 1</h3>
-                <p>
-                The game element is released. So you can start to brainstorm.
-                </p>
-            </div>
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Nov 9</h3>
-                <p>
-                The game piece store opens. Order a printed game piece if you would
-                rather not print your own. The model stays free either way.
-                </p>
-            </div>
-
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Nov 23</h3>
-                <p>
-                Trophies and plaques. The store opens for award trophies and plaques.
-                Details are still to be announced.
-                </p>
-            </div>
-            <div class="column item" data-aos="fade-up">
-                <h3 class="item-title">Dec 1</h3>
-                <p>
-                The full rulebook is released, and you can finally build the robots you've been waiting for!
-                </p>
-            </div>
-
-        </div>
-
-        <div class="row block-large-1-2 block-tab-full collapse">
-            <div class="column" data-aos="fade-up">
-                <h3 class="h6">Still To Be Decided</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Season name</th>
-                            <td>Still being worked on. The season is coming either way.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Registration fees</th>
-                            <td>To be announced. Expect confirmation within a week of registration opening on October 26.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Trophies and plaques</th>
-                            <td>To be announced. The store opens November 23.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="piece" class="s-services">
-
-        <div class="row">
-            <div class="column large-12">
-                <div class="section-title" data-num="04" data-aos="fade-up">
-                    <h3 class="h6">The Game Piece</h3>
-                </div>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    The game piece is free to print. We publish the model.
-                </h1>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <p class="lead" data-aos="fade-up">
-                    The official 2027 game piece is published as a model you can print at
-                    home. Order one from the store when it opens on November 9 if printing
-                    is not your thing.
-                </p>
-            </div>
-        </div>
-
-        <div class="row block-large-1-2 block-tab-full">
-            <div class="column large-7 w-900-stack" data-aos="fade-up">
-                <div class="video-container" id="viewerStage"></div>
-                <div class="row" style="margin-top:2rem;">
-                    <div class="column large-12">
-                        <button type="button" class="btn btn--small btn--primary" id="viewerSpin" aria-pressed="true">Pause spin</button>
-                        <button type="button" class="btn btn--small btn--stroke" id="viewerReset">Reset view</button>
-                        <a class="btn btn--small btn--stroke" href="assets/game-element.stl" download>Download STL</a>
-                    </div>
-                </div>
-                <p><small id="viewerStatus">Loading the game piece</small></p>
-                <p><small>Drag to orbit, scroll to zoom, click the piece.</small></p>
-                <p id="viewerFallbackNote" style="display:none;"><small>This is the placeholder model. Drop the real file at assets/game-element.stl and it loads on the next refresh.</small></p>
-            </div>
-
-            <div class="column large-5 w-900-stack" data-aos="fade-up">
-                <p class="lead">
-                Every team plays with the same piece, so nobody wins because they had a
-                better print.
-                </p>
-                <p>
-                The model is published as an STL, so you can scale it, change it, or print
-                it on any machine you like. We check the piece against the size limit
-                before it goes on the field.
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <section id="sponsors" class="s-portfolio">
-
-        <div class="row s-porfolio__top">
-            <div class="column large-6 w-900-stack">
-                <div class="section-title" data-num="05" data-aos="fade-up">
-                    <h3 class="h6">Sponsors</h3>
-                </div>
-            </div>
-            <div class="column large-6 w-900-stack">
-                <h1 class="display-1" data-aos="fade-up">
-                    Sponsorship goes straight into lowering the cost of entry.
-                </h1>
-            </div>
-        </div>
-
-        <div class="row block-large-1-2 block-tab-full collapse">
-            <div class="column" data-aos="fade-up">
-                <table>
-                    <tbody>
-                        <tr>
-                            <th scope="row">Team sponsor</th>
-                            <td>Covers the hardware for one team.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Workshop sponsor</th>
-                            <td>Funds one hands on training session.</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">League sponsor</th>
-                            <td>Supports league operations for a full season.</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="column" data-aos="fade-up">
-                <p class="lead">
-                Every donation pays for hardware, free workshops, and mentorship for teams
-                that cannot otherwise afford to compete.
-                </p>
-                <p>
-                    <a class="btn btn--primary btn--small" href="mailto:join@arecrobotics.com?subject=Sponsoring%20AREC">Become a sponsor</a>
-                    <a class="btn btn--stroke btn--small" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <section class="s-contact">
-
-        <div class="row narrower s-contact__top h-text-center">
-            <div class="column">
-                <h3 class="h6">Get In Touch</h3>
-                <h1 class="display-1">
-                Questions about joining, mentoring or sponsoring. A person reads every
-                message. Write to us at
-                </h1>
-            </div>
-        </div>
-
-        <div class="row h-text-center">
-            <div class="column">
-                <p class="s-contact__email" style="font-size:clamp(28px,8vw,108px);">
-                    <a href="mailto:join@arecrobotics.com">join@<wbr>arecrobotics.com</a>
-                </p>
-            </div>
-        </div>
-
-    </section>
-
-    <footer class="s-footer">
-        <div class="row row-y-top">
-
-            <div class="column large-8 medium-12">
-                <div class="row">
-                    <div class="column large-7 tab-12 s-footer__block">
-                        <h4 class="h6">Find Us</h4>
-
-                        <p>
-                        <a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a><br>
-                        <a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a><br>
-                        <a href="https://instagram.com/join.arec">Instagram</a>
+        <section class="section" id="how">
+            <div class="shell">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow__num">02</span> How it works</p>
+                    <div class="section-head__body">
+                        <h2 class="section-title">You do not need a kit or a parts list.</h2>
+                        <p class="lead">
+                            You pick the chassis, the motors and the motor driver. You put a WiFi
+                            board in the middle. The only thing you cannot change is how the robot
+                            is driven.
                         </p>
                     </div>
+                </header>
 
-                    <div class="column large-5 tab-12 s-footer__block">
-                        <h4 class="h6">Follow Us</h4>
+                <ol class="plain-list" data-reveal-group>
+                    <li data-reveal>
+                        <span class="plain-list__num">01</span>
+                        <div>
+                            <h3>Register your team</h3>
+                            <p>Create a team on the dashboard and you are in. That is the whole signup, and it costs nothing.</p>
+                        </div>
+                    </li>
+                    <li data-reveal>
+                        <span class="plain-list__num">02</span>
+                        <div>
+                            <h3>Build your robot</h3>
+                            <p>Any design that fits inside 18 inches, stays under 30 pounds and runs on 12 volts or less. Parts and tools are your call.</p>
+                        </div>
+                    </li>
+                    <li data-reveal>
+                        <span class="plain-list__num">03</span>
+                        <div>
+                            <h3>Drive it over WiFi</h3>
+                            <p>Use the AREC driver app on a laptop or tablet. No Bluetooth, no radio, no cable for driving. Everything goes over one WiFi link.</p>
+                        </div>
+                    </li>
+                    <li data-reveal>
+                        <span class="plain-list__num">04</span>
+                        <div>
+                            <h3>Play the season</h3>
+                            <p>Sign up for the events you want and turn up. Referees, scoring and the game pieces are all handled by us.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </section>
 
-                        <ul class="s-footer__list">
-                            <li><a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team management system</a></li>
-                            <li><a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Auth server</a></li>
-                            <li><a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Webmail</a></li>
-                            <li><a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances</a></li>
-                        </ul>
+        <section class="section section--surface" id="get">
+            <div class="shell">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow__num">03</span> What teams get</p>
+                    <div class="section-head__body">
+                        <h2 class="section-title">Support that comes with the season.</h2>
+                        <p class="lead">Workshops, mentors, rules and money. None of it is an extra you have to chase.</p>
+                    </div>
+                </header>
+
+                <ul class="checklist" data-reveal-group>
+                    <li data-reveal>
+                        <strong>Build workshops</strong>
+                        Hands-on sessions with parts on the table. Bring a laptop, leave with a moving robot.
+                    </li>
+                    <li data-reveal>
+                        <strong>A mentor for new teams</strong>
+                        Someone who has built a robot before, on the other end of an email.
+                    </li>
+                    <li data-reveal>
+                        <strong>The rulebook before the season</strong>
+                        Size, weight, power, driving and scoring, published with time to build.
+                    </li>
+                    <li data-reveal>
+                        <strong>Referees and scoring</strong>
+                        Every official event has a trained crew and a score that goes on the record.
+                    </li>
+                    <li data-reveal>
+                        <strong>Game pieces</strong>
+                        Print the model yourself for free, or order a printed piece from the store.
+                    </li>
+                    <li data-reveal>
+                        <strong>Money for parts</strong>
+                        Sponsorship pays for hardware and entry fees when a team needs the help.
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="season">
+            <div class="shell">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow__num">04</span> The 2027 season</p>
+                    <div class="section-head__body">
+                        <h2 class="section-title">Dates we have locked in.</h2>
+                        <p class="lead">
+                            Registration comes first, then the game piece, then the rules. Event
+                            dates follow once hosts have their venues confirmed.
+                        </p>
+                    </div>
+                </header>
+
+                <ol class="timeline" data-reveal-group>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Oct 24</span>
+                        <div class="timeline__body">
+                            <h3>Event applications open</h3>
+                            <p>Anyone can apply to host an event, community or official. You bring a venue and a field; we help with the rest.</p>
+                        </div>
+                        <span class="timeline__tag">Host</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Oct 26</span>
+                        <div class="timeline__body">
+                            <h3>Team registration opens</h3>
+                            <p>Create your team on the dashboard. That is the signup, and any discount is applied automatically.</p>
+                        </div>
+                        <span class="timeline__tag">Signup</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Oct 30</span>
+                        <div class="timeline__body">
+                            <h3>Event registration opens</h3>
+                            <p>Teams can sign up for the events they want from the same dashboard.</p>
+                        </div>
+                        <span class="timeline__tag">Events</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Nov 1</span>
+                        <div class="timeline__body">
+                            <h3>The game piece is revealed</h3>
+                            <p>The piece you will be scoring with is published, so you can start designing around it.</p>
+                        </div>
+                        <span class="timeline__tag">Game</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Nov 9</span>
+                        <div class="timeline__body">
+                            <h3>Game piece store opens</h3>
+                            <p>Order a printed piece if you would rather not print one. The model stays free either way.</p>
+                        </div>
+                        <span class="timeline__tag">Store</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Nov 23</span>
+                        <div class="timeline__body">
+                            <h3>Trophies and plaques</h3>
+                            <p>The store opens for season awards. Details are still being finalized.</p>
+                        </div>
+                        <span class="timeline__tag">Awards</span>
+                    </li>
+                    <li class="timeline__item" data-reveal>
+                        <span class="timeline__date">Dec 1</span>
+                        <div class="timeline__body">
+                            <h3>The full rulebook is released</h3>
+                            <p>Read it before you build. It covers size, weight, power, driving and how matches are scored.</p>
+                        </div>
+                        <span class="timeline__tag">Rules</span>
+                    </li>
+                </ol>
+
+                <div class="split split--wide" style="margin-top:clamp(40px,5vw,64px);">
+                    <div data-reveal>
+                        <h3 class="card-title" style="margin-bottom:16px;">Still being decided</h3>
+                        <dl class="specs">
+                            <div class="specs__row">
+                                <dt>Season name</dt>
+                                <dd>We are still choosing one. The season is happening either way.</dd>
+                            </div>
+                            <div class="specs__row">
+                                <dt>Registration fees</dt>
+                                <dd>Announced within a week of registration opening on October 26.</dd>
+                            </div>
+                            <div class="specs__row">
+                                <dt>Trophies and plaques</dt>
+                                <dd>Details when the store opens on November 23.</dd>
+                            </div>
+                        </dl>
+                    </div>
+                    <div data-reveal>
+                        <p class="lead">
+                            Nothing about these dates changes the build. Start with the robot and
+                            the rules you already have, and we will fill in the rest as it is
+                            confirmed.
+                        </p>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="column large-4 medium-12 s-footer__block--end">
-                <a href="register.html" class="btn h-full-width">Pre-register a team</a>
+        <section class="section section--surface" id="piece">
+            <div class="shell">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow__num">05</span> The game piece</p>
+                    <div class="section-head__body">
+                        <h2 class="section-title">Free to print. Same piece for every team.</h2>
+                        <p class="lead">
+                            A better printer should not win a match. Download the model, print it at
+                            home, or order one when the store opens on November 9.
+                        </p>
+                    </div>
+                </header>
 
-                <div class="ss-copyright">
-                    <span>Copyright AREC 2026</span>
-                    <span>Design by <a href="https://www.styleshout.com/" target="_blank" rel="noopener noreferrer">StyleShout</a></span>
+                <div class="split split--wide">
+                    <div data-reveal>
+                        <div class="viewer" id="viewerStage" role="group" aria-label="Interactive 3D model of the 2027 game piece">
+                            <span class="viewer__badge">3D model</span>
+                        </div>
+
+                        <div class="viewer-tools">
+                            <button type="button" class="btn btn--ghost btn--sm" id="viewerSpin" aria-pressed="true">Pause spin</button>
+                            <button type="button" class="btn btn--ghost btn--sm" id="viewerReset">Reset view</button>
+                            <a class="btn btn--ghost btn--sm" href="assets/game-element.stl" download>Download STL</a>
+                        </div>
+
+                        <p class="viewer-status" id="viewerStatus" role="status">Loading the game piece</p>
+                        <p class="viewer-hint">Drag to turn it, scroll to zoom, click the piece.</p>
+                        <p class="viewer-hint" id="viewerFallbackNote" style="display:none;">This is a placeholder model. Add assets/game-element.stl and it loads on the next refresh.</p>
+                    </div>
+
+                    <div class="stack" data-reveal>
+                        <p class="lead">
+                            The model is published as an STL, so you can print it on any machine
+                            that handles the size. We check every piece against the size limit
+                            before it goes on the field.
+                        </p>
+                        <p class="body">
+                            There is no advantage to printing it yourself or buying one. It is the
+                            same shape, the same size and the same material rules either way.
+                        </p>
+                        <a class="text-link" href="assets/game-element.stl" download>Download the model</a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="ss-go-top">
-                <a class="smoothscroll" title="Back to Top" href="#top">
-                    top
-                </a>
+        <section class="section" id="sponsors">
+            <div class="shell">
+                <header class="section-head" data-reveal>
+                    <p class="eyebrow"><span class="eyebrow__num">06</span> Sponsors</p>
+                    <div class="section-head__body">
+                        <h2 class="section-title">Every dollar lowers the cost of playing.</h2>
+                        <p class="lead">
+                            Sponsorship pays for hardware, workshop space and entry fees. It is how
+                            a team with no budget still gets a robot on the field.
+                        </p>
+                    </div>
+                </header>
+
+                <div class="split">
+                    <div data-reveal>
+                        <dl class="specs">
+                            <div class="specs__row">
+                                <dt>Team sponsor</dt>
+                                <dd>Covers the parts for one team, from chassis to controller.</dd>
+                            </div>
+                            <div class="specs__row">
+                                <dt>Workshop sponsor</dt>
+                                <dd>Pays for one hands-on build session, including the parts on the table.</dd>
+                            </div>
+                            <div class="specs__row">
+                                <dt>League sponsor</dt>
+                                <dd>Keeps the season running, from fields and referees to game pieces.</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <div class="stack" data-reveal>
+                        <p class="lead">
+                            We are a student-run league, and our finances are public. You can see
+                            exactly where a donation goes.
+                        </p>
+                        <div class="btn-row">
+                            <a class="btn btn--primary" href="mailto:join@arecrobotics.com?subject=Sponsoring%20AREC">Become a sponsor</a>
+                            <a class="btn btn--ghost" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
+                        </div>
+                        <a class="text-link" href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">See the public ledger</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact">
+            <div class="shell contact__inner">
+                <div class="contact__head">
+                    <div data-reveal>
+                        <p class="eyebrow"><span class="eyebrow__num">&rarr;</span> Get in touch</p>
+                        <h2 style="margin-top:16px;">Questions about the season, your robot, or hosting an event?</h2>
+                    </div>
+                    <p class="contact__note" data-reveal>
+                        One of us reads every email and replies. Usually within a couple of days.
+                    </p>
+                </div>
+
+                <div data-reveal>
+                    <a class="contact__email" href="mailto:join@arecrobotics.com">join@<wbr>arecrobotics.com</a>
+                </div>
+
+                <div class="contact__meta">
+                    <span>Instagram <a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">@join.arec</a></span>
+                    <span>Hosting <a href="mailto:join@arecrobotics.com?subject=Hosting%20an%20AREC%20event">Email us</a></span>
+                    <span>Sponsorship <a href="mailto:join@arecrobotics.com?subject=Sponsoring%20AREC">Email us</a></span>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer__grid">
+
+                <div class="footer__brand">
+                    <a class="brand" href="index.html" aria-label="AREC home">
+                        <svg class="brand__mark" viewBox="0 0 98 100" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="butt" stroke-linejoin="miter">
+                                <polyline points="49.2,27.2 49.2,73.2"/>
+                                <polyline points="23.8,48.8 75.1,48.8"/>
+                                <polyline points="49.2,27.2 25.7,1.3"/>
+                                <polyline points="49.2,27.2 69.7,1.3"/>
+                                <polyline points="49.2,73.2 25.7,97.9"/>
+                                <polyline points="49.2,73.2 69.7,97.9"/>
+                                <polyline points="23.8,48.8 1.3,29.8"/>
+                                <polyline points="23.8,48.8 1.3,71.7"/>
+                                <polyline points="75.1,48.8 96.3,29.8"/>
+                                <polyline points="75.1,48.8 96.3,71.7"/>
+                                <polyline points="36.7,1.3 25.7,1.3 25.7,12.3"/>
+                                <polyline points="58.7,1.3 69.7,1.3 69.7,12.3"/>
+                                <polyline points="12.3,29.8 1.3,29.8 1.3,40.8"/>
+                                <polyline points="12.3,71.7 1.3,71.7 1.3,60.7"/>
+                                <polyline points="85.3,29.8 96.3,29.8 96.3,40.8"/>
+                                <polyline points="85.3,71.7 96.3,71.7 96.3,60.7"/>
+                                <polyline points="36.7,97.9 25.7,97.9 25.7,86.9"/>
+                                <polyline points="58.7,97.9 69.7,97.9 69.7,86.9"/>
+                            </g>
+                        </svg>
+                        <span class="brand__word">AREC</span>
+                    </a>
+                    <p class="footer__tagline">A student-run robotics league. Any robot that fits the rules, one field for everyone.</p>
+                </div>
+
+                <div>
+                    <p class="footer__heading">Explore</p>
+                    <ul class="footer__list">
+                        <li><a href="league.html">The league</a></li>
+                        <li><a href="robot.html">Robot rules</a></li>
+                        <li><a href="register.html">Register</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="footer__heading">Your AREC</p>
+                    <ul class="footer__list">
+                        <li><a href="https://tms.arecrobotics.com/" target="_blank" rel="noopener noreferrer">Team dashboard<span>tms.arecrobotics.com</span></a></li>
+                        <li><a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer">Account<span>Sign in or create one</span></a></li>
+                        <li><a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer">Email<span>Webmail</span></a></li>
+                        <li><a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer">Finances<span>Public ledger</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <p class="footer__heading">Contact</p>
+                    <ul class="footer__list">
+                        <li><a href="mailto:join@arecrobotics.com">join@arecrobotics.com</a></li>
+                        <li><a href="mailto:info@arecrobotics.com">info@arecrobotics.com</a></li>
+                        <li><a href="https://instagram.com/join.arec" target="_blank" rel="noopener noreferrer">Instagram<span>@join.arec</span></a></li>
+                    </ul>
+                </div>
+
             </div>
 
+            <div class="footer__bottom">
+                <span>&copy; <span data-year>2026</span> AREC — Alliance for Robotics Education and Competition</span>
+                <a href="#top">Back to top &uarr;</a>
+            </div>
+
+            <span class="footer__mark" aria-hidden="true">AREC</span>
         </div>
     </footer>
 
-    <script src="assets/js/jquery-3.2.1.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="assets/js/arec.js"></script>
+    <script src="assets/js/site.js"></script>
     <script type="module" src="assets/game.js"></script>
 
 </body>
-
 </html>

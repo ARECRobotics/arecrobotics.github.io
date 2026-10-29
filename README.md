@@ -3,118 +3,140 @@
 Static site for the AREC robotics league. Deployed to GitHub Pages by
 `.github/workflows/static.yml`. Push to `main` and it goes live.
 
+No build step and no framework. Edit a file, push, done.
+
 ## Pages
 
 | File | What it is |
 | --- | --- |
-| `index.html` | Home. What AREC is, what a team gets, sponsors and partners |
-| `league.html` | How the league works, the 2027 season timeline, the game piece, sponsors |
-| `robot.html` | The robot rules. The brain, the WiFi rule, the size, weight and power limits |
-| `register.html` | Pre-registration, step by step, plus the questions we get most |
-| `volunteer.html` | Volunteering, step by step, plus the role list |
-| `assets/css/styles.css` | The stylesheet |
-| `assets/css/vendor.css` | Template vendor stylesheet, slick and PhotoSwipe |
-| `assets/js/arec.js` | The header tools menu |
-| `assets/js/game.js` | Three.js viewer for the game piece |
+| `index.html` | Home. What AREC is, how it works, what teams get, the season dates, sponsors |
+| `league.html` | The season format, the 2027 timeline, the game piece viewer, sponsors |
+| `robot.html` | The WiFi rule, the controller, the size, weight and power limits, a build guide |
+| `register.html` | Registration steps, what to have ready, what you get, common questions |
+| `volunteer.html` | How to start, the role list, what a first event is like |
+| `assets/css/styles.css` | The whole stylesheet |
+| `assets/js/site.js` | Header state, mobile menu, tools menu, scroll reveals |
+| `assets/js/game.js` | Three.js viewer for the game piece (league page only) |
 | `assets/game-element.stl` | The game piece model |
+| `assets/images/logo.svg` | The brand mark (also inlined in each page header) |
 
-No build step. Edit a file, push, done.
+The only external requests are Google Fonts and, on the league page, Three.js
+from a CDN.
 
 ## The design
 
-The site is built on the Flare template from StyleShout. The template
-stylesheet is used as it ships, with one exception: the colour variables.
-The template's pink accent is replaced with AREC red.
+The site is hand-written. There is no template, no Bootstrap, no jQuery and no
+icon library.
 
-| Variable | Value | Used for |
+### Color
+
+| Token | Value | Used for |
 | --- | --- | --- |
-| `--color-1` | `hsla(5, 65%, 47%, 1)` | The accent. Links, buttons, the contact block, the footer |
-| `--color-1-lighter` | `hsla(5, 65%, 63%, 1)` | Link hover |
-| `--color-1-light` | `hsla(5, 65%, 55%, 1)` | |
-| `--color-1-dark` | `hsla(5, 65%, 37%, 1)` | |
-| `--color-1-darker` | `hsla(5, 65%, 27%, 1)` | The rule beside the about section |
+| `--paper` | `#f6f6f3` | Page background |
+| `--surface` | `#ffffff` | Cards and raised panels |
+| `--ink` | `#101012` | Body text |
+| `--muted` | `#6d6d75` | Secondary text |
+| `--accent` | `#2b46f0` | Links, buttons, timeline dates, card numbers |
+| `--spark` | `#d8ff5c` | The lime highlight: WiFi in the headline, the live dot, active viewer buttons |
+| `--night` | `#0a0a0c` | Hero, contact block, footer |
 
-Everything else in the stylesheet is the template's, unchanged. There are
-no new class names and no new CSS libraries.
+The accent is cobalt, not the old red. Lime is used sparingly so it still feels
+like a highlight.
 
-### Things that needed a decision
+### Type
 
-- **No stock photography.** The hero uses `assets/images/hero-bg.jpg`, a
-  dark branded graphic made for the site. The about section has no photo
-  block, and the portfolio grid is not used.
-- **The header tools menu** is built in `assets/js/arec.js` with inline
-  styles, because the template has no dropdown component and we are not
-  adding class names. On a phone the same links are dropped into the
-  slide down menu instead of the button.
-- **The game piece viewer** uses the template's `video-container` class for
-  the stage, so the viewer needed no new CSS.
-- **Font Awesome is not shipped.** The social icons are inline SVG.
+- **Geist** for headlines, body copy, navigation and buttons.
+- **Geist Mono** for eyebrows, dates, specs, card numbers, the footer meta and
+  the contact address. It gives the technical details a different voice from
+  the prose.
 
-## Type
+Both are variable fonts loaded from Google Fonts with `preconnect`. The
+fallback stack starts with `system-ui`.
 
-Two families, loaded from Google Fonts by the template stylesheet.
+### Layout
 
-- **Montserrat**, headings, navigation, display type.
-- **Nunito Sans**, body copy and prose.
+- A 1240px shell with clamped side gutters.
+- A dark hero and footer around a warm paper body.
+- A fixed header that is transparent over the home hero and turns solid paper
+  once you scroll.
+- 22px cards with hairline borders, pill buttons and tight display type.
+- On small screens the nav becomes a panel, grids collapse to one column, the
+  timeline stacks and the volunteer roles table becomes a list.
+
+### Motion
+
+Section reveals use `IntersectionObserver` and a small CSS transition. The
+`prefers-reduced-motion` setting turns them off. With JavaScript disabled, the
+small-screen menu is shown as a static list under the header, so the site still
+navigates.
+
+## Editing
+
+- Every page carries its own copy of the header and footer. If you change the
+  nav or the footer links, change all five pages.
+- A section is `.section` > `.shell` > `.section-head` plus a grid or list. The
+  spacing scale is in `:root` (`--section-y`, `--gutter`, `--page`).
+- Keep the copy plain and specific. Short sentences, real numbers, no startup
+  vocabulary. Say "robot", not "platform".
 
 ## The robot rules
 
-The one rule that matters: the brain is driven over WiFi from a laptop or
-a tablet, using the AREC driver app, and no other communication method is
-allowed. Bluetooth is not allowed, not even for telemetry.
+The rule that shapes every robot: it is driven over WiFi from a laptop or tablet
+with the AREC driver app, and no other communication link is allowed. That
+includes Bluetooth, radio and any cable used for driving or data.
 
-Any COTS board with WiFi works as the brain. The ESP32 family, and an
-Arduino Uno, Nano or Mega with WiFi.
+Any off-the-shelf board with WiFi is allowed. The ESP32 family, or an Arduino
+Uno, Nano or Mega with a WiFi shield or module.
 
 | Limit | Value |
 | --- | --- |
-| Maximum size | 18 inches on a side |
+| Maximum size | 18 inches on any side |
 | Maximum weight | 30 pounds, ready to compete |
 | Maximum voltage | 12 volts |
 
-The optional build bundle in the store is a ready made robot for teams
-who would rather not start from a box of parts. Building your own robot
-from your own parts is just as welcome.
+The optional build bundle is a ready-made robot you add a controller to.
+Building from your own parts is just as welcome.
 
 ## The game piece model
 
-The viewer loads `assets/game-element.stl`. To update the model, drop the
-new file at that exact path:
+The viewer loads `assets/game-element.stl`. To update the model, replace that
+file with the new one:
 
 ```
-assets/game-element.stl        <- drop your file here, same filename
+assets/game-element.stl        <- same path, same filename
 ```
 
-Nothing else needs changing. The viewer fetches the file with the cache
-disabled, so a new model shows up on the next reload. The model is auto
-centred and auto scaled, so units do not matter. Binary and ASCII STL
-both work. If the file is missing the viewer falls back to a generated
-placeholder block and says so under the viewer.
+The viewer fetches the file with the cache disabled, so a new model appears on
+the next reload. The mesh is centered and scaled automatically, so units do not
+matter, and both binary and ASCII STL work. If the file is missing, the viewer
+falls back to a generated placeholder block and says so under the stage.
 
-Three.js loads from a CDN through an import map, so nothing is vendored
-into the repository.
+Three.js and the STL loader load from jsDelivr through the import map in
+`league.html`. Nothing is vendored into the repository.
 
-## Placeholders
+## Accounts and links
 
-These are marked as placeholders and should be replaced as real content
-arrives.
+| What | Where |
+| --- | --- |
+| Team dashboard | `tms.arecrobotics.com` |
+| Account | `auth.albt.qzz.io` |
+| Webmail | `mail.arecrobotics.com` |
+| Finances | `hcb.hackclub.com/arec` |
 
-- `assets/images/icons/clients/your-logo-here.svg` is the sponsor logo
-  placeholder in the home page strip.
-- `assets/images/avatars/placeholder.svg` is the testimonial avatar.
-- The two testimonial quotes on the home page are placeholders.
+Creating a team on the dashboard is the registration. Accounts live at
+`auth.albt.qzz.io`. Any discount announced for the season is applied to the team
+automatically.
 
-## Registration
+Season dates live in the timeline on `index.html` and `league.html`. The current
+copy has team registration opening October 26, 2026 and event registration on
+October 30. Update both pages together when a date changes.
 
-Pre-registration runs entirely through the TMS at `tms.arecrobotics.com`.
-Creating a team there is the registration. Any discount is applied to the
-account automatically. Accounts live on the auth server at
-`auth.albt.qzz.io`.
+## Assets
 
-## Volunteering
+`assets/images/logo.svg` is the only image left from the old build. The header
+and footer draw the mark inline so it can follow the text color. The old Flare
+template files, sliders, service icons and stock graphics were removed with the
+rewrite.
 
-Three steps, no form.
-
-1. Email `info@arecrobotics.com` with the subject "I want to volunteer"
-2. Create an account at `auth.albt.qzz.io`
-3. We email a meeting booking link to the address used in step 1
+If you add photos, put them in `assets/images/` and keep the file names short
+and lowercase.
