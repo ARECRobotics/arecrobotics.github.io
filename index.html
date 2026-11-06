@@ -60,10 +60,35 @@
             justify-content: center;
             text-align: center;
             padding: 20px;
+            overflow-y: auto;
         }
         .logo { width: 160px; height: auto; margin-bottom: 24px; display: block; }
         h1 { font-size: 48px; letter-spacing: 0.2em; text-transform: uppercase; }
         p.sub { margin-top: 12px; font-size: 15px; color: #333; }
+
+        .calendar {
+            margin-top: 32px;
+            border-top: 1px solid #000;
+            border-bottom: 1px solid #000;
+            padding: 24px 0;
+            width: 100%;
+            max-width: 560px;
+        }
+        .calendar h2 {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 16px;
+        }
+        .calendar ul { list-style: none; text-align: left; }
+        .calendar li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 15px;
+        }
+        .calendar li:last-child { border-bottom: none; }
+        .calendar a { text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 1px; }
+        .calendar a:hover { background: #f2f2f2; }
 
         .donate {
             position: fixed;
@@ -125,6 +150,16 @@
         <img class="logo" src="logo.png" alt="AREC logo">
         <h1>Coming Soon</h1>
         <p class="sub">Volunteer page landing here soon.</p>
+
+        <div class="calendar">
+            <h2>Calendar</h2>
+            <ul>
+                <li>Team registration is open now <a href="https://tms.arecrobotics.com" target="_blank" rel="noopener noreferrer">tms.arecrobotics.com</a></li>
+                <li>Game piece released December 1</li>
+                <li>Online store opens in the new year</li>
+                <li>Everything else pushed back a month</li>
+            </ul>
+        </div>
     </div>
 
     <div class="overlay" id="volunteer-modal" aria-modal="true" role="dialog" aria-labelledby="modal-title">
