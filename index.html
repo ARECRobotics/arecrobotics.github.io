@@ -33,16 +33,28 @@
         .bar {
             position: fixed;
             top: 0; left: 0; right: 0;
-            padding: 20px;
+            padding: 24px 32px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 16px;
+            gap: 20px;
+            border-bottom: 1px solid #000;
         }
-        .brand { font-size: 18px; font-weight: 700; letter-spacing: 0.1em; }
+        .brand {
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-decoration: none;
+        }
+        .bar__right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            position: relative;
+        }
 
         .waffle {
-            width: 32px; height: 32px;
+            width: 36px; height: 36px;
             display: grid;
             grid-template-columns: repeat(3, 8px);
             grid-template-rows: repeat(3, 8px);
@@ -52,6 +64,30 @@
         }
         .waffle div { background: #000; }
 
+        .waffle-menu {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 10px;
+            background: #fff;
+            border: 1px solid #000;
+            min-width: 260px;
+            display: none;
+            z-index: 20;
+        }
+        .waffle-menu.open { display: block; }
+        .waffle-menu a {
+            display: block;
+            padding: 12px 16px;
+            text-decoration: none;
+            border-bottom: 1px solid #e5e5e5;
+            font-size: 14px;
+        }
+        .waffle-menu a:last-child { border-bottom: none; }
+        .waffle-menu a:hover { background: #f2f2f2; }
+        .waffle-menu .label { font-weight: 700; }
+        .waffle-menu .url { font-size: 12px; color: #333; }
+
         .main {
             height: 100vh;
             display: flex;
@@ -59,40 +95,31 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 20px;
+            padding: 24px;
             overflow-y: auto;
         }
-        .logo { width: 160px; height: auto; margin-bottom: 24px; display: block; }
-        h1 { font-size: 48px; letter-spacing: 0.2em; text-transform: uppercase; }
-        p.sub { margin-top: 12px; font-size: 15px; color: #333; }
+        .logo { width: 160px; height: auto; margin-bottom: 32px; display: block; }
+        h1 { font-size: 56px; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 12px; }
+        p.sub { font-size: 15px; color: #333; margin-bottom: 32px; }
 
-        .calendar {
-            margin-top: 32px;
-            border-top: 1px solid #000;
-            border-bottom: 1px solid #000;
-            padding: 24px 0;
-            width: 100%;
-            max-width: 560px;
+        .dates {
+            text-align: left;
+            max-width: 400px;
         }
-        .calendar h2 {
+        .dates p {
             font-size: 16px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
         }
-        .calendar ul { list-style: none; text-align: left; }
-        .calendar li {
-            padding: 10px 0;
-            border-bottom: 1px solid #e5e5e5;
-            font-size: 15px;
+        .dates a {
+            text-decoration: none;
+            border-bottom: 1px solid #000;
+            padding-bottom: 1px;
         }
-        .calendar li:last-child { border-bottom: none; }
-        .calendar a { text-decoration: none; border-bottom: 1px solid #000; padding-bottom: 1px; }
-        .calendar a:hover { background: #f2f2f2; }
+        .dates a:hover { background: #f2f2f2; }
 
         .donate {
             position: fixed;
-            bottom: 30px; left: 50%;
+            bottom: 32px; left: 50%;
             transform: translateX(-50%);
         }
 
@@ -111,22 +138,22 @@
         .modal {
             background: #fff;
             color: #000;
-            padding: 40px;
+            padding: 48px;
             max-width: 420px;
             width: 100%;
             text-align: center;
             position: relative;
         }
-        .modal h2 { font-size: 26px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.1em; }
-        .modal p { margin-bottom: 16px; font-size: 15px; color: #222; }
-        .modal .email { font-size: 17px; font-weight: 700; margin-bottom: 20px; display: block; }
+        .modal h2 { font-size: 26px; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.1em; }
+        .modal p { margin-bottom: 18px; font-size: 15px; color: #222; }
+        .modal .email { font-size: 18px; font-weight: 700; margin-bottom: 24px; display: block; }
         .close {
             position: absolute;
-            top: 12px; right: 16px;
+            top: 14px; right: 18px;
             background: transparent;
             color: #000;
             padding: 6px;
-            font-size: 22px;
+            font-size: 24px;
             line-height: 1;
         }
         .close:hover { background: #f2f2f2; }
@@ -135,14 +162,21 @@
 <body>
 
     <div class="bar">
-        <div class="brand">AREC</div>
-        <div>
-            <button class="waffle" id="waffle" aria-label="Volunteer links" aria-expanded="false" aria-controls="volunteer-modal">
+        <a class="brand" href="index.html">AREC</a>
+        <div class="bar__right">
+            <button class="waffle" id="waffle" aria-label="System links" aria-expanded="false" aria-controls="waffle-menu">
                 <div></div><div></div><div></div>
                 <div></div><div></div><div></div>
                 <div></div><div></div><div></div>
             </button>
+            <div class="waffle-menu" id="waffle-menu">
+                <a href="https://hcb.hackclub.com/arec" target="_blank" rel="noopener noreferrer"><span class="label">Finances</span><span class="url">hcb.hackclub.com</span></a>
+                <a href="https://mail.arecrobotics.com" target="_blank" rel="noopener noreferrer"><span class="label">Mail &amp; services</span><span class="url">mail.arecrobotics.com</span></a>
+                <a href="https://tms.arecrobotics.com" target="_blank" rel="noopener noreferrer"><span class="label">Team management system</span><span class="url">tms.arecrobotics.com</span></a>
+                <a href="https://auth.albt.qzz.io" target="_blank" rel="noopener noreferrer"><span class="label">Central authentication server</span><span class="url">auth.albt.qzz.io</span></a>
+            </div>
             <a class="btn" href="https://hcb.hackclub.com/donations/start/arec" target="_blank" rel="noopener noreferrer">Donate</a>
+            <button class="btn" id="volunteer-btn">Volunteer</button>
         </div>
     </div>
 
@@ -151,14 +185,9 @@
         <h1>Coming Soon</h1>
         <p class="sub">Volunteer page landing here soon.</p>
 
-        <div class="calendar">
-            <h2>Calendar</h2>
-            <ul>
-                <li>Team registration is open now <a href="https://tms.arecrobotics.com" target="_blank" rel="noopener noreferrer">tms.arecrobotics.com</a></li>
-                <li>Game piece released December 1</li>
-                <li>Online store opens in the new year</li>
-                <li>Everything else pushed back a month</li>
-            </ul>
+        <div class="dates">
+            <p>Game released December 1</p>
+            <p>Team sign up <a href="https://tms.arecrobotics.com" target="_blank" rel="noopener noreferrer">tms.arecrobotics.com</a></p>
         </div>
     </div>
 
@@ -175,24 +204,35 @@
 
     <script>
         const waffle = document.getElementById('waffle');
+        const waffleMenu = document.getElementById('waffle-menu');
+        const volunteerBtn = document.getElementById('volunteer-btn');
         const overlay = document.getElementById('volunteer-modal');
         const close = document.getElementById('close-modal');
 
-        function openModal() {
+        function toggleWaffle() {
+            const open = waffleMenu.classList.toggle('open');
+            waffle.setAttribute('aria-expanded', open);
+        }
+        function openVolunteer() {
             overlay.classList.add('open');
-            waffle.setAttribute('aria-expanded', 'true');
             overlay.focus();
         }
-        function closeModal() {
+        function closeVolunteer() {
             overlay.classList.remove('open');
-            waffle.setAttribute('aria-expanded', 'false');
-            waffle.focus();
+            volunteerBtn.focus();
         }
 
-        waffle.addEventListener('click', openModal);
-        close.addEventListener('click', closeModal);
-        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeModal(); });
-        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+        waffle.addEventListener('click', toggleWaffle);
+        volunteerBtn.addEventListener('click', openVolunteer);
+        close.addEventListener('click', closeVolunteer);
+        overlay.addEventListener('click', (e) => { if (e.target === overlay) closeVolunteer(); });
+        document.addEventListener('click', (e) => {
+            if (!waffle.contains(e.target) && !waffleMenu.contains(e.target)) {
+                waffleMenu.classList.remove('open');
+                waffle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeVolunteer(); });
     </script>
 
 </body>
