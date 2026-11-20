@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iOS NFC Tag Reader (via NFC Helper)</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --primary: #007aff;
+      --text: #1c1c1e;
+      --muted: #6e6e73;
+      --border: #e5e5ea;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+    h1 {
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+    p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+      margin-bottom: 20px;
+    }
+    .input-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+    input[type="text"] {
+      width: 100%;
+      box-sizing: border-box;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    button:active {
+      opacity: 0.85;
+    }
+    .secondary-btn {
+      background-color: #e5e5ea;
+      color: var(--text);
+      margin-top: 10px;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+    .results {
+      margin-top: 24px;
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+      display: none;
+    }
+    .results.visible {
+      display: block;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 8px;
+      border-bottom: 1px solid var(--border);
+      word-break: break-all;
+    }
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      width: 35%;
+    }
+    .warning {
+      background: #fff3cd;
+      color: #856404;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-bottom: 16px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>NFC Tag Reader</h1>
+    <p>Tap below to launch <strong>NFC Helper</strong>, scan an NFC tag, and return the tag's data directly to this page.</p>
+
+    <div id="fileWarning" class="warning">
+      ⚠️ You are viewing this via <code>file://</code>. Host this file over <code>http://</code> or <code>https://</code> so NFC Helper can redirect back to it.
+    </div>
+
+    <div class="input-group">
+      <label for="customParam">Custom State / Session ID (Optional)</label>
+      <input type="text" id="customParam" placeholder="e.g., asset-check-01" />
+    </div>
+
+    <button id="scanBtn">Scan NFC Tag</button>
+
+    <div id="resultsSection" class="results">
+      <strong>Scanned Tag Data:</strong>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Parameter</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <button id="clearBtn" class="secondary-btn">Clear Results</button>
+    </div>
+  </div>
+
+  <script>
+    const scanBtn = document.getElementById("scanBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const customInput = document.getElementById("customParam");
+    const resultsSection = document.getElementById("resultsSection");
+    const dataTableBody = document.querySelector("#dataTable tbody");
+    const fileWarning = document.getElementById("fileWarning");
+
+    // 1. Warn if opened via local file:// protocol
+    if (window.location.protocol === "file:") {
+      fileWarning.style.display = "block";
+    }
+
+    // 2. Check for callback query parameters when the page loads
+    function parseCallbackData() {
+      const urlParams = new URLSearchParams(window.location.search);
+      const entries = Array.from(urlParams.entries());
+
+      if (entries.length > 0) {
+        dataTableBody.innerHTML = "";
+        entries.forEach(([key, value]) => {
+          const row = document.createElement("tr");
+          const keyCell = document.createElement("td");
+          const valCell = document.createElement("td");
+
+          keyCell.textContent = key;
+          valCell.textContent = value;
+
+          row.appendChild(keyCell);
+          row.appendChild(valCell);
+          dataTableBody.appendChild(row);
+        });
+        resultsSection.classList.add("visible");
+      }
+    }
+
+    // 3. Build the nfchelper://read URL scheme and launch the app
+    scanBtn.addEventListener("click", () => {
+      // Strip existing query parameters so they don't stack across multiple scans
+      const cleanCallbackUrl = window.location.origin + window.location.pathname;
+      
+      // Construct NFC Helper URL parameters
+      const schemeParams = new URLSearchParams();
+      schemeParams.set("callback", cleanCallbackUrl);
+      schemeParams.set("params", "true"); // Required to append tag data to callback URL
+
+      const customVal = customInput.value.trim();
+      if (customVal) {
+        schemeParams.set("custom", customVal);
+      }
+
+      const nfcHelperUri = `nfchelper://read?${schemeParams.toString()}`;
+      
+      // Redirect to NFC Helper
+      window.location.href = nfcHelperUri;
+    });
+
+    // 4. Reset URL and clear UI
+    clearBtn.addEventListener("click", () => {
+      const cleanUrl = window.location.origin + window.location.pathname;
+      window.history.replaceState({}, document.title, cleanUrl);
+      resultsSection.classList.remove("visible");
+      dataTableBody.innerHTML = "";
+    });
+
+    // Run parser on initial page load
+    parseCallbackData();
+  </script>
+</body>
+</html>
